@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atabey Botanica — Ingredient Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracotta: #B7673A;
+    --sand: #F5EFE6;
+    --earth: #2C2218;
+    --muted: #A8947E;
+    --border: #C8B8A6;
+    --light-sand: #FAF6F1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--light-sand); color: var(--earth); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+
+  .page-header { background: var(--earth); padding: 3rem 2rem 2.5rem; text-align: center; }
+  .back-link { display: inline-block; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-decoration: none; margin-bottom: 1.5rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--sand); }
+  .page-brand { font-family: 'Cormorant Garamond', serif; font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--border); margin-bottom: 0.6rem; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 600; color: var(--sand); line-height: 1.2; margin-bottom: 0.6rem; }
+  .page-title em { color: var(--terracotta); font-style: italic; }
+  .page-sub { font-size: 0.85rem; color: var(--muted); max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+  .page-body { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+  /* BASE SECTION */
+  .base-section { margin-bottom: 3.5rem; }
+  .section-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; color: var(--earth); margin-bottom: 1.5rem; }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+
+  /* INGREDIENT ROWS */
+  .ing-grid { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 2px; overflow: hidden; margin-bottom: 1rem; }
+  .ing-row { display: grid; grid-template-columns: 220px 1fr; gap: 0; border-bottom: 1px solid var(--border); background: white; }
+  .ing-row:last-child { border-bottom: none; }
+  .ing-row.header-row { background: var(--earth); }
+  .ing-cell { padding: 0.85rem 1.2rem; }
+  .ing-row.header-row .ing-cell { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+  .ing-name-cell .name { font-size: 0.9rem; font-weight: 500; color: var(--earth); line-height: 1.3; }
+  .ing-role-cell { border-left: 1px solid var(--border); }
+  .ing-role-cell .role { font-size: 0.85rem; color: var(--earth); line-height: 1.6; }
+  .ing-role-cell .role-detail { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; line-height: 1.5; }
+
+  /* SCENT TABS */
+  .scent-section { margin-bottom: 2rem; }
+  .scent-header { background: var(--earth); padding: 1.1rem 1.5rem; display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; border-radius: 2px 2px 0 0; }
+  .scent-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--sand); }
+  .scent-desc { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .scent-body { background: white; border: 1px solid var(--border); border-top: none; border-radius: 0 0 2px 2px; padding: 1.5rem; }
+  .scent-note-text { font-size: 0.85rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem; }
+
+  /* SINGLE EO NOTE */
+  .single-eo-note { background: var(--sand); border: 1px solid var(--border); border-radius: 2px; padding: 1rem 1.4rem; display: flex; gap: 1rem; align-items: flex-start; }
+  .single-eo-icon { font-size: 1.2rem; flex-shrink: 0; line-height: 1.5; color: var(--terracotta); }
+  .single-eo-text { font-size: 0.85rem; color: var(--earth); line-height: 1.7; }
+  .single-eo-text strong { font-weight: 500; display: block; margin-bottom: 0.1rem; }
+
+  /* WILD SHIELD EO TABLE */
+  .eo-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+  .eo-table th { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); font-weight: 500; }
+  .eo-table td { font-size: 0.85rem; color: var(--earth); padding: 0.7rem 0.8rem; border-bottom: 1px solid #F0E8DF; vertical-align: top; line-height: 1.5; }
+  .eo-table tr:last-child td { border-bottom: none; }
+  .eo-table .eo-name { font-weight: 500; }
+  .eo-table .eo-targets { font-size: 0.75rem; color: var(--muted); display: block; margin-top: 2px; }
+  .eo-table .eo-role { font-size: 0.82rem; color: var(--muted); }
+
+  /* LABEL LINE */
+  .label-line { margin-top: 1.2rem; padding-top: 1.2rem; border-top: 1px dashed var(--border); }
+  .label-line-title { font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.4rem; }
+  .label-line-text { font-size: 0.82rem; color: var(--earth); line-height: 1.7; font-style: italic; }
+
+  /* CAUTION */
+  .caution-box { background: #FFF8F0; border: 1px solid #E8D5BC; border-radius: 2px; padding: 0.9rem 1.2rem; margin-top: 1.2rem; font-size: 0.8rem; color: var(--muted); line-height: 1.7; }
+  .caution-box strong { color: var(--terracotta); font-weight: 500; display: block; margin-bottom: 0.2rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  /* DIVIDER */
+  .section-divider { border: none; border-top: 1px solid var(--border); margin: 3rem 0; }
+
+  footer { background: var(--earth); padding: 2rem; text-align: center; }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--sand); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .footer-tagline { font-size: 0.75rem; color: var(--muted); font-style: italic; margin-bottom: 1.2rem; }
+  .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--border); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--terracotta); }
+
+  @media (max-width: 600px) {
+    .ing-row { grid-template-columns: 1fr; }
+    .ing-role-cell { border-left: none; border-top: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a href="index.html" class="back-link">← Back to Atabey Botanica</a>
+  <div class="page-brand">Atabey Botanica</div>
+  <h1 class="page-title">Ingredient <em>Reference</em></h1>
+  <p class="page-sub">What is in every butter, and why it is there. Nothing hidden. Everything disclosed.</p>
+</div>
+
+<div class="page-body">
+
+  <!-- THE BASE -->
+  <div class="base-section">
+    <div class="section-label">Foundation of every butter</div>
+    <h2 class="section-title">The <em>shared base</em></h2>
+
+    <div class="ing-grid">
+      <div class="ing-row header-row">
+        <div class="ing-cell">Ingredient</div>
+        <div class="ing-cell">What it brings to your skin</div>
+      </div>
+      <div class="ing-row">
+        <div class="ing-cell ing-name-cell"><div class="name">Unrefined Shea Butter</div></div>
+        <div class="ing-cell ing-role-cell">
+          <div class="role">The heart of the formula. Rich in fatty acids that deeply nourish and soften skin.</div>
+          <div class="role-detail">Ethically sourced from women's cooperatives in West Africa, where shea has been a cornerstone of skin care for generations. Supports the skin barrier, soothes irritation, and keeps moisture in without clogging pores.</div>
+        </div>
+      </div>
+      <div class="ing-row">
+        <div class="ing-cell ing-name-cell"><div class="name">Unrefined Cocoa Butter</div></div>
+        <div class="ing-cell ing-role-cell">
+          <div class="role">Gives the butter its structure and a long, slow release of moisture.</div>
+          <div class="role-detail">Traditionally valued for its ability to support skin elasticity and soften the appearance of stretch marks over time. Creates a protective layer that holds hydration close to the skin.</div>
+        </div>
+      </div>
+      <div class="ing-row">
+        <div class="ing-cell ing-name-cell"><div class="name">Fractionated Coconut Oil</div></div>
+        <div class="ing-cell ing-role-cell">
+          <div class="role">The lightweight carrier that makes the butter absorb cleanly without greasiness.</div>
+          <div class="role-detail">Stays liquid at room temperature. Penetrates quickly, helps other ingredients absorb, and leaves a soft, non-sticky finish on the skin.</div>
+        </div>
+      </div>
+      <div class="ing-row">
+        <div class="ing-cell ing-name-cell"><div class="name">Jojoba Oil</div></div>
+        <div class="ing-cell ing-role-cell">
+          <div class="role">Technically a wax ester - the closest plant oil to the skin's own natural sebum.</div>
+          <div class="role-detail">Balances oil production, supports skin that tends toward dryness or sensitivity, and absorbs without residue. Stable, non-comedogenic, and long-treasured in plant medicine traditions.</div>
+        </div>
+      </div>
+      <div class="ing-row">
+        <div class="ing-cell ing-name-cell"><div class="name">Vitamin E</div></div>
+        <div class="ing-cell ing-role-cell">
+          <div class="role">A plant-derived antioxidant that protects the formula and supports the look of healthy skin.</div>
+          <div class="role-detail">Helps shield the skin's surface from environmental stress, supports an even-looking complexion, and extends the shelf life of the butter naturally - without synthetic preservatives.</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem; color:var(--muted); font-style:italic; line-height:1.7;">
+      This base is the same in every Atabey Botanica body butter. What makes each scent distinct is the botanical added at the finish.
+    </p>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- SCENT SECTION INTRO -->
+  <div class="section-label">The collection</div>
+  <h2 class="section-title" style="margin-bottom:0.5rem;">The <em>essential oils</em></h2>
+
+
+  <!-- FRANKINCENSE -->
+  <div class="scent-section">
+    <div class="scent-header">
+      <div class="scent-name">Frankincense</div>
+      <div class="scent-desc">Grounding · Sacred · Restorative</div>
+    </div>
+    <div class="scent-body">
+      <div class="single-eo-note">
+        <div class="single-eo-icon">✦</div>
+        <div class="single-eo-text">
+          <strong>Frankincense Essential Oil</strong>
+          One of the oldest plant resins known to humanity, revered for its ability to calm redness, quiet inflamed skin, and gently support renewal in skin that has been through stress. Its plant compounds help protect the skin from environmental stress. Inhaled, it has long been used to open the chest and ease the breath. For moments when the body needs to be met with softness.
+        </div>
+      </div>
+      <div class="label-line">
+        <div class="label-line-title">Full ingredient list as it appears on the label</div>
+        <div class="label-line-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Vitamin E, Frankincense Essential Oil</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GERANIUM -->
+  <div class="scent-section">
+    <div class="scent-header">
+      <div class="scent-name">Geranium</div>
+      <div class="scent-desc">Blooming · Balancing · Heart Opening</div>
+    </div>
+    <div class="scent-body">
+      <div class="single-eo-note">
+        <div class="single-eo-icon">✦</div>
+        <div class="single-eo-text">
+          <strong>Geranium Essential Oil</strong>
+          A restorative oil — one that supports the skin's own process of renewal. Purifying and calming, it soothes irritated and sensitive skin while supporting the look of renewed, balanced skin. Traditionally used on skin that has been through a great deal and is finding its way back. For skin that is ready to find its way back to itself.
+        </div>
+      </div>
+      <div class="label-line">
+        <div class="label-line-title">Full ingredient list as it appears on the label</div>
+        <div class="label-line-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Vitamin E, Geranium Essential Oil</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BERGAMOT -->
+  <div class="scent-section">
+    <div class="scent-header">
+      <div class="scent-name">Bergamot</div>
+      <div class="scent-desc">Citrus · Uplifting · Liberating</div>
+    </div>
+    <div class="scent-body">
+      <div class="single-eo-note">
+        <div class="single-eo-icon">✦</div>
+        <div class="single-eo-text">
+          <strong>Bergamot Essential Oil</strong>
+          Purifying and calming, with a long history of soothing reactive, reddened skin and quieting surface irritation. Traditionally valued for brightening an uneven tone and supporting the skin's own balancing process. Light, clarifying, and quietly restorative — chosen when the skin, and the spirit, need a little lift.
+        </div>
+      </div>
+      <div class="label-line">
+        <div class="label-line-title">Full ingredient list as it appears on the label</div>
+        <div class="label-line-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Vitamin E, Bergamot Essential Oil</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WILD SHIELD -->
+  <div class="scent-section">
+    <div class="scent-header">
+      <div class="scent-name">Wild Shield</div>
+      <div class="scent-desc">Bug Barrier &nbsp;|&nbsp; Botanical Repellent &nbsp;·&nbsp; <span style="font-size:0.6rem; background:var(--terracotta); color:white; padding:0.15rem 0.5rem; border-radius:20px; letter-spacing:0.1em;">Summer Seasonal</span></div>
+    </div>
+    <div class="scent-body">
+      <div class="single-eo-note" style="margin-bottom:1.4rem;">
+        <div class="single-eo-icon">✦</div>
+        <div class="single-eo-text" style="font-style:italic;">
+          A botanical blend of citronella, cedarwood, lemongrass, and rosemary - each chosen for their traditional use in repelling mosquitoes and ticks. Whipped light into the butter so it absorbs cleanly, leaves no greasy residue, and wears comfortably in summer heat. Protection you will actually want to put on.
+        </div>
+      </div>
+      <p class="scent-note-text">
+        Wild Shield shares the same nourishing base as every Atabey Botanica butter. It adds two more plant ingredients - Sesame Seed Oil and Arrowroot Powder - and a purposeful blend of essential oils, each chosen for what it repels and what it brings to the skin.
+      </p>
+
+      <div style="margin-bottom:1.2rem;">
+        <div class="label-line-title" style="margin-bottom:0.6rem;">Additional base ingredients in Wild Shield</div>
+        <div style="display:flex; flex-direction:column; gap:0; border:1px solid var(--border); border-radius:2px; overflow:hidden;">
+          <div style="display:grid; grid-template-columns:220px 1fr; background:white; border-bottom:1px solid var(--border);">
+            <div style="padding:0.8rem 1.2rem; font-size:0.9rem; font-weight:500; color:var(--earth);">Sesame Seed Oil</div>
+            <div style="padding:0.8rem 1.2rem; border-left:1px solid var(--border); font-size:0.85rem; color:var(--muted); line-height:1.6;">Rich in antioxidants and naturally protective. Absorbs well and adds a soft, skin-conditioning layer.</div>
+          </div>
+          <div style="display:grid; grid-template-columns:220px 1fr; background:white;">
+            <div style="padding:0.8rem 1.2rem; font-size:0.9rem; font-weight:500; color:var(--earth);">Arrowroot Powder</div>
+            <div style="padding:0.8rem 1.2rem; border-left:1px solid var(--border); font-size:0.85rem; color:var(--muted); line-height:1.6;">A fine plant starch that absorbs excess moisture on the skin. Gives the butter a dry, silky finish - no greasiness, even in summer heat.</div>
+          </div>
+        </div>
+      </div>
+      <table class="eo-table">
+        <thead>
+          <tr>
+            <th>Essential Oil</th>
+            <th>What it repels</th>
+            <th>What it brings to the skin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="eo-name">Citronella</span></td>
+            <td><span class="eo-role">Mosquitoes, ticks, wasps</span></td>
+            <td><span class="eo-role">Antimicrobial, refreshing, deodorizing</span></td>
+          </tr>
+          <tr>
+            <td><span class="eo-name">Cedarwood</span></td>
+            <td><span class="eo-role">Ticks at all life stages</span></td>
+            <td><span class="eo-role">Astringent, grounding, skin-toning</span></td>
+          </tr>
+          <tr>
+            <td><span class="eo-name">Rosemary</span></td>
+            <td><span class="eo-role">Mosquitoes, wasps</span></td>
+            <td><span class="eo-role">Purifying, energising to the skin</span></td>
+          </tr>
+          <tr>
+            <td><span class="eo-name">Lemongrass</span></td>
+            <td><span class="eo-role">Mosquitoes, wasps</span></td>
+            <td><span class="eo-role">Antimicrobial, clarifying, brightening</span></td>
+          </tr>
+          <tr>
+            <td><span class="eo-name">Thyme</span></td>
+            <td><span class="eo-role">Ticks, mosquitoes</span></td>
+            <td><span class="eo-role">Purifying, antimicrobial</span></td>
+          </tr>
+          <tr>
+            <td><span class="eo-name">Clove Bud</span></td>
+            <td><span class="eo-role">Wasps, mosquitoes, ticks</span></td>
+            <td><span class="eo-role">Antimicrobial</span></td>
+          </tr>
+          <tr>
+            <td><span class="eo-name">Geranium</span></td>
+            <td><span class="eo-role">Mosquitoes, midges</span></td>
+            <td><span class="eo-role">Skin-renewing, balancing</span></td>
+          </tr>
+          <tr>
+            <td><span class="eo-name">Peppermint</span></td>
+            <td><span class="eo-role">Mosquitoes, ants, spiders</span></td>
+            <td><span class="eo-role">Cooling, refreshing, clarifying</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="label-line">
+        <div class="label-line-title">Full ingredient list as it appears on the label</div>
+        <div class="label-line-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Sesame Seed Oil, Arrowroot Powder, Vitamin E, Citronella, Cedarwood, Rosemary, Lemongrass, Geranium, Thyme and Peppermint Essential Oils</div>
+      </div>
+
+      <div class="caution-box">
+        <strong>Application note</strong>
+        Do not apply over cuts, wounds, irritated, or sunburned skin. Reapply every 1-2 hours for outdoor activity. Patch test recommended for those with known sensitivities.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">Atabey Botanica</div>
+  <div class="footer-tagline">Rooted in the earth. Untamed by nature.</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="https://tally.so/r/68v95e">Order</a>
+    <a href="mailto:atabeybotanica@gmail.com">Contact</a>
+    <a href="https://www.instagram.com/atabeybotanica/">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>
