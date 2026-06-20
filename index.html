@@ -655,7 +655,7 @@
 
   .footer-tagline {
     font-size: 0.85rem;
-    color: var(--muted);
+    color: #FAF6F1;
     font-style: italic;
     margin-bottom: 1.5rem;
   }
@@ -672,7 +672,7 @@
     font-size: 0.85rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--border);
+    color: #FAF6F1;
     text-decoration: none;
     transition: color 0.3s;
   }
@@ -681,7 +681,7 @@
 
   .footer-legal {
     font-size: 0.68rem;
-    color: var(--muted);
+    color: #FAF6F1;
     line-height: 1.8;
     max-width: 480px;
     margin: 0 auto;
@@ -746,6 +746,25 @@
     .header-text-col { text-align: center; }
   }
 
+
+  /* ── MOBILE OPTIMIZATION ── */
+  @media (max-width: 480px) {
+    .hero-content { padding: 2rem 1rem; }
+    .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
+    .hero-sub { font-size: 0.9rem; }
+    .section-inner { padding: 3rem 1.2rem; }
+    .section-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+    .scent-card { padding: 1.5rem 1.2rem; }
+    .clean-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .ritual-steps { gap: 1.5rem; }
+    .step-numeral { font-size: 1.5rem; }
+    .bundle-grid, .product-grid { grid-template-columns: 1fr; }
+    .cta-grid { grid-template-columns: 1fr; }
+    .footer-links { gap: 1rem; font-size: 0.8rem; }
+    .footer-legal { font-size: 0.72rem; }
+    nav { padding: 0.8rem 1rem; }
+    .nav-links { gap: 1rem; font-size: 0.75rem; }
+  }
 </style>
 </head>
 <body>
