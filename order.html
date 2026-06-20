@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order — Atabey Botanica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --terra:   #B7673A;
+      --sand:    #F5EFE6;
+      --earth:   #2C2218;
+      --brown:   #5C4A3A;
+      --border:  #C8B8A6;
+      --muted:   #5C4A3A;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--sand);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--earth);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      background: var(--sand);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-back {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--brown);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-back:hover { color: var(--terra); }
+
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--terra);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-spacer { width: 80px; }
+
+    /* ── PAGE ── */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ── HEADER ── */
+    .page-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .page-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 0.75rem;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: var(--earth);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .page-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--brown);
+      line-height: 1.75;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1.5px;
+      background: var(--terra);
+      margin: 1.5rem auto;
+    }
+
+    /* ── SCENT SECTION ── */
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 1rem;
+    }
+
+    .scent-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .scent-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem 1.1rem;
+    }
+
+    .scent-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--earth);
+      margin-bottom: 0.2rem;
+    }
+
+    .scent-tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--terra);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .scent-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      color: var(--brown);
+      line-height: 1.6;
+    }
+
+    .seasonal-note {
+      font-size: 0.72rem;
+      color: var(--terra);
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    /* ── BUNDLE SECTION ── */
+    .bundles-header {
+      margin-bottom: 1.25rem;
+    }
+
+    .bundles-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--earth);
+      margin-bottom: 0.3rem;
+    }
+
+    .bundles-note {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--brown);
+      line-height: 1.6;
+    }
+
+    .bundle-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .bundle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .bundle-row:hover {
+      border-color: var(--terra);
+      box-shadow: 0 2px 8px rgba(183,103,58,0.12);
+    }
+
+    .bundle-left { flex: 1; }
+
+    .bundle-size {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--earth);
+      margin-bottom: 0.15rem;
+    }
+
+    .bundle-detail {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      color: var(--brown);
+    }
+
+    .bundle-right {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .bundle-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--terra);
+      white-space: nowrap;
+    }
+
+    .bundle-btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+      background: var(--terra);
+      border: none;
+      border-radius: 2px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .bundle-btn:hover { background: var(--earth); }
+
+    /* ── WILD SHIELD SECTION ── */
+    .ws-section {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .ws-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .ws-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--earth);
+    }
+
+    .ws-badge {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terra);
+      border: 1px solid var(--terra);
+      border-radius: 2px;
+      padding: 0.2rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    .ws-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--brown);
+      line-height: 1.7;
+      margin-bottom: 1.1rem;
+    }
+
+    .ws-bundles {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    /* ── HOW TO ORDER ── */
+    .how-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .how-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--earth);
+      margin-bottom: 1rem;
+    }
+
+    .how-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .how-step {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--terra);
+      min-width: 20px;
+      line-height: 1.6;
+    }
+
+    .step-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--brown);
+      line-height: 1.65;
+    }
+
+    .step-text strong {
+      color: var(--earth);
+      font-weight: 500;
+    }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+
+    .footer-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--brown);
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-contact {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .footer-contact a {
+      color: var(--terra);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover { text-decoration: underline; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 560px) {
+      .page-title { font-size: 2rem; }
+      .scent-grid { grid-template-columns: 1fr; }
+      .bundle-row { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+      .bundle-right { width: 100%; justify-content: space-between; }
+      .nav { padding: 1rem; }
+      .page { padding: 2rem 1rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-back" href="index.html">← Back</a>
+  <a class="nav-brand" href="index.html">Atabey Botanica</a>
+  <div class="nav-spacer"></div>
+</nav>
+
+<!-- PAGE -->
+<main class="page">
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <p class="page-eyebrow">Come Home to Yourself</p>
+    <h1 class="page-title">Order Your Ritual</h1>
+  </header>
+
+  <!-- SCENTS -->
+  <p class="section-label">Our Scents</p>
+  <div class="scent-grid">
+    <div class="scent-card">
+      <div class="scent-name">Frankincense</div>
+      <div class="scent-desc">Grounding · Sacred · Restorative</div>
+    </div>
+    <div class="scent-card">
+      <div class="scent-name">Geranium</div>
+      <div class="scent-desc">Blooming · Balancing · Heart Opening</div>
+    </div>
+    <div class="scent-card">
+      <div class="scent-name">Bergamot</div>
+      <div class="scent-desc">Citrus · Uplifting · Liberating</div>
+    </div>
+    <div class="scent-card">
+      <div class="scent-name">Wild Shield</div>
+      <div class="scent-desc">Bug Barrier · Botanical Repellent</div>
+      <div class="seasonal-note">Seasonal</div>
+    </div>
+  </div>
+
+  <!-- BUNDLES -->
+  <div class="bundles-header">
+    <p class="section-label">Choose Your Bundle</p>
+    <div class="bundles-title">Frankincense · Geranium · Bergamot · Wild Shield</div>
+    <p class="bundles-note">Free shipping included. At checkout you will be asked which scent(s) you would like — you can mix and match across any bundle.</p>
+  </div>
+
+  <div class="bundle-list">
+
+    <a class="bundle-row" href="https://buy.stripe.com/6oU6oGbt1etmeVJbQx8bS06" target="_blank">
+      <div class="bundle-left">
+        <div class="bundle-size">1 × 2oz jar</div>
+      </div>
+      <div class="bundle-right">
+        <div class="bundle-price">$14</div>
+        <span class="bundle-btn">Order →</span>
+      </div>
+    </a>
+
+    <a class="bundle-row" href="https://buy.stripe.com/14A5kCdB90Cw5l96wd8bS05" target="_blank">
+      <div class="bundle-left">
+        <div class="bundle-size">1 × 6oz jar</div>
+      </div>
+      <div class="bundle-right">
+        <div class="bundle-price">$34</div>
+        <span class="bundle-btn">Order →</span>
+      </div>
+    </a>
+
+    <a class="bundle-row" href="https://buy.stripe.com/fZufZg1Sr0Cw8xl2fX8bS04" target="_blank">
+      <div class="bundle-left">
+        <div class="bundle-size">1 × 6oz + 1 × 2oz</div>
+      </div>
+      <div class="bundle-right">
+        <div class="bundle-price">$45</div>
+        <span class="bundle-btn">Order →</span>
+      </div>
+    </a>
+
+    <a class="bundle-row" href="https://buy.stripe.com/fZufZg1Sr2KEcNBf2J8bS03" target="_blank">
+      <div class="bundle-left">
+        <div class="bundle-size">1 × 6oz + 2 × 2oz</div>
+      </div>
+      <div class="bundle-right">
+        <div class="bundle-price">$55</div>
+        <span class="bundle-btn">Order →</span>
+      </div>
+    </a>
+
+    <a class="bundle-row" href="https://buy.stripe.com/14AcN440zdpi6pdf2J8bS01" target="_blank">
+      <div class="bundle-left">
+        <div class="bundle-size">2 × 6oz jars</div>
+      </div>
+      <div class="bundle-right">
+        <div class="bundle-price">$60</div>
+        <span class="bundle-btn">Order →</span>
+      </div>
+    </a>
+
+    <a class="bundle-row" href="https://buy.stripe.com/aFaaEWeFdgBu6pdbQx8bS00" target="_blank">
+      <div class="bundle-left">
+        <div class="bundle-size">3 × 6oz jars</div>
+      </div>
+      <div class="bundle-right">
+        <div class="bundle-price">$85</div>
+        <span class="bundle-btn">Order →</span>
+      </div>
+    </a>
+
+  </div>
+
+
+  <!-- HOW TO ORDER -->
+  <div class="how-box">
+    <div class="how-title">How ordering works</div>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Choose your bundle</strong> above and tap Order →</div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">2</div>
+        <div class="step-text">On the checkout page, you will see a field: <strong>"Which scent(s) would you like?"</strong> — type your selection there. Example: <em>1 Frankincense, 1 Geranium</em> or <em>2 Bergamot</em></div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Complete your payment.</strong> Stripe collects your shipping address and sends a receipt to your email automatically.</div>
+      </div>
+      <div class="how-step">
+        <div class="step-num">4</div>
+        <div class="step-text">Your order is <strong>hand-batched and shipped with care.</strong> Questions? Email <a href="mailto:hello@atabeybotanica.com" style="color:var(--terra);">hello@atabeybotanica.com</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="page-footer">
+    <p class="footer-tagline">Come home to yourself. Again and again.</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
