@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Atabey Botanica</title>
+  <meta name="description" content="Get in touch with Atabey Botanica, questions, partnership inquiries, press, or anything else.">
+
+  <meta property="og:title" content="Contact | Atabey Botanica">
+  <meta property="og:description" content="Get in touch with Atabey Botanica, questions, partnership inquiries, press, or anything else.">
+  <meta property="og:image" content="https://atabeybotanica.com/assets/og-image.png">
+  <meta property="og:url" content="https://atabeybotanica.com/contact.html">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact | Atabey Botanica">
+  <meta name="twitter:description" content="Get in touch with Atabey Botanica, questions, partnership inquiries, press, or anything else.">
+  <meta name="twitter:image" content="https://atabeybotanica.com/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --terra:   #B7673A;
+      --sand:    #F5EFE6;
+      --earth:   #2C2218;
+      --brown:   #5C4A3A;
+      --border:  #C8B8A6;
+      --muted:   #5C4A3A;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--sand);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--earth);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      background: var(--sand);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-back {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--brown);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-back:hover { color: var(--terra); }
+
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--terra);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-spacer { width: 80px; }
+
+    /* ── PAGE ── */
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ── HEADER ── */
+    .page-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .page-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 0.75rem;
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 600;
+      color: var(--earth);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .page-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--brown);
+      line-height: 1.75;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1.5px;
+      background: var(--terra);
+      margin: 1.5rem auto;
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+    }
+
+    /* ── ALT CONTACT ── */
+    .alt-contact {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--brown);
+    }
+
+    .alt-contact a {
+      color: var(--terra);
+      text-decoration: none;
+    }
+
+    .alt-contact a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--earth);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--sand);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: #FAF6F1;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer-links a {
+      color: #FAF6F1;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--terra); }
+
+    .footer-legal {
+      font-size: 0.68rem;
+      color: #FAF6F1;
+      line-height: 1.8;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 560px) {
+      .page-title { font-size: 2rem; }
+      .nav { padding: 1rem; }
+      .page { padding: 2rem 1rem 4rem; }
+      .form-card { padding: 1rem; }
+    }
+  </style>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246545402.js"></script>
+<!-- End of HubSpot Embed Code -->
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a class="nav-back" href="index.html">← Back</a>
+  <a class="nav-brand" href="index.html">Atabey Botanica</a>
+  <div class="nav-spacer"></div>
+</nav>
+
+<!-- PAGE -->
+<main class="page">
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <p class="page-eyebrow">Come Home to Yourself</p>
+    <h1 class="page-title">Get in Touch</h1>
+    <div class="divider"></div>
+    <p class="page-sub">
+      Whether you're placing an order, exploring a partnership, or just want to say hello, I'd love to hear from you.
+    </p>
+  </header>
+
+  <!-- FORM -->
+  <div class="form-card">
+    <div id="hubspot-contact-form"></div>
+  </div>
+
+  <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+  <script>
+    hbspt.forms.create({
+      portalId: "246545402",
+      formId: "650b640f-9cdb-48e8-93c9-a811e7eff741",
+      region: "na2",
+      target: "#hubspot-contact-form"
+    });
+  </script>
+
+  <p class="alt-contact">
+    Prefer email? Reach me directly at <a href="mailto:hello@atabeybotanica.com">hello@atabeybotanica.com</a>
+  </p>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="assets/Logo.png" alt="Atabey Botanica" style="width:80px; height:auto; margin-bottom:1rem; opacity:0.85;">
+    <div class="footer-brand">Atabey Botanica</div>
+    <div class="footer-tagline">Mother Nature has everything we need.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="atabey.html">Our Name</a>
+      <a href="ingredients.html">Ingredients</a>
+      <a href="order.html">Order</a>
+      <a href="https://www.instagram.com/atabeybotanica/">Instagram</a>
+    </div>
+    <p class="footer-legal">
+      Atabey Botanica products are cosmetic preparations and are not intended to diagnose, treat, cure, or prevent any disease or medical condition. Always consult your healthcare provider before introducing new skincare products during medical treatment.
+    </p>
+  </footer>
+
+</main>
+
+</body>
+</html>
