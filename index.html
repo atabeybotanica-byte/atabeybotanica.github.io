@@ -46,6 +46,8 @@
     overflow-x: hidden;
   }
 
+  section[id] { scroll-margin-top: 78px; }
+
   /* ── NOISE TEXTURE OVERLAY ── */
   body::before {
     content: '';
@@ -56,6 +58,53 @@
     z-index: 0;
     opacity: 0.4;
   }
+
+  /* ── STICKY TOP NAV ── */
+  .main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245,239,230,0.96);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .main-nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .main-nav-links {
+    display: flex;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+  }
+
+  .main-nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+  }
+
+  .main-nav-links a:hover { color: var(--terracotta); }
 
   /* ── HERO ── */
   .hero {
@@ -82,7 +131,6 @@
     pointer-events: none;
   }
 
-  /* botanical circle decoration */
   .hero-circle {
     position: absolute;
     width: 520px;
@@ -130,14 +178,6 @@
     text-transform: uppercase;
     line-height: 1.1;
     margin-bottom: 0.4rem;
-  }
-
-  .brand-pronunciation {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-    margin-bottom: 2rem;
   }
 
   .hero-divider {
@@ -206,10 +246,7 @@
   }
 
   /* ── SECTION BASE ── */
-  section {
-    position: relative;
-    z-index: 1;
-  }
+  section { position: relative; z-index: 1; }
 
   .section-inner {
     max-width: 860px;
@@ -234,10 +271,7 @@
     margin-bottom: 1.2rem;
   }
 
-  .section-title em {
-    font-style: italic;
-    color: var(--terracotta);
-  }
+  .section-title em { font-style: italic; color: var(--terracotta); }
 
   .section-body {
     font-size: 0.95rem;
@@ -246,74 +280,64 @@
     max-width: 620px;
   }
 
-  /* ── PHILOSOPHY ── */
-  .philosophy {
-    background: var(--earth);
-    color: var(--sand);
+  /* ── STORY SECTION ── */
+  .story-section { background: var(--earth); color: var(--sand); }
+  .story-section .section-inner { max-width: 720px; }
+  .story-section .section-label { color: var(--border); }
+  .story-body p {
+    font-size: 0.95rem;
+    color: var(--border);
+    line-height: 2;
+    margin-bottom: 1.4rem;
+    max-width: 680px;
   }
+  .story-body p:last-child { margin-bottom: 0; }
 
-  .philosophy .section-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .philosophy .section-label { color: var(--border); }
-
-  .philosophy .section-title {
-    color: var(--sand);
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-  }
-
-  .philosophy .section-title em { color: var(--terracotta); }
-
-  .philosophy .section-body { color: var(--border); }
-
-  .philosophy-pillars {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .pillar {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    animation: fadeUp 0.8s ease both;
-  }
-
-  .pillar-icon {
-    width: 2px;
-    height: 36px;
-    background: var(--terracotta);
-    flex-shrink: 0;
-    margin-top: 4px;
-  }
-
-  .pillar-title {
+  .story-naming {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--terracotta);
+    text-align: center;
+    margin: 3rem 0;
+  }
+
+  .word-block { margin-top: 3rem; }
+  .word-block-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
     font-weight: 600;
     color: var(--sand);
-    letter-spacing: 0.04em;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
   }
-
-  .pillar-text {
-    font-size: 0.82rem;
+  .word-block-title em { color: var(--terracotta); font-style: italic; }
+  .word-block-meaning {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-style: italic;
     color: var(--border);
-    line-height: 1.7;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.2rem;
   }
+  .word-divider-line {
+    width: 36px;
+    height: 1px;
+    background: var(--terracotta);
+    opacity: 0.6;
+    margin-bottom: 1.2rem;
+  }
+  .word-block p {
+    font-size: 0.9rem;
+    color: var(--border);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+    max-width: 640px;
+  }
+  .word-block p:last-child { margin-bottom: 0; }
 
   /* ── WHAT'S NOT IN IT ── */
-  .clean {
-    background: white;
-  }
-
-  .clean .section-inner {
-    text-align: center;
-  }
+  .clean { background: white; }
+  .clean .section-inner { text-align: center; }
 
   .clean-grid {
     display: grid;
@@ -357,13 +381,8 @@
   }
 
   /* ── RITUAL ── */
-  .ritual {
-    background: var(--sand);
-  }
-
-  .ritual .section-inner {
-    max-width: 720px;
-  }
+  .ritual { background: var(--sand); }
+  .ritual .section-inner { max-width: 720px; }
 
   .ritual-intro {
     font-family: 'Cormorant Garamond', serif;
@@ -405,8 +424,6 @@
     line-height: 1;
     opacity: 0.6;
   }
-
-  .step-content {}
 
   .step-title {
     font-family: 'Cormorant Garamond', serif;
@@ -450,26 +467,8 @@
     color: #FAF6F1;
   }
 
-  .ritual-link {
-    display: inline-block;
-    margin-top: 2rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--terracotta);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 2px;
-    transition: border-color 0.3s;
-  }
-
-  .ritual-link:hover { border-color: var(--terracotta); }
-
-  /* ── PRODUCTS ── */
-  .products {
-    background: var(--light-sand);
-  }
-
+  /* ── PRODUCTS / COLLECTION ── */
+  .products { background: var(--light-sand); }
   .products .section-inner { text-align: center; }
 
   .scent-grid {
@@ -528,122 +527,138 @@
     line-height: 1.7;
   }
 
-  .order-cta {
-    margin-top: 1rem;
-  }
+  .order-cta { margin-top: 1rem; }
 
-  /* ── SOURCING ── */
-  .sourcing {
-    background: var(--earth);
-    color: var(--sand);
-  }
+  /* ── ORDER SECTION ── */
+  .order-section { background: white; }
+  .order-section .section-inner { max-width: 720px; }
 
-  .sourcing .section-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .sourcing .section-title { color: var(--sand); }
-  .sourcing .section-label { color: var(--border); }
-  .sourcing .section-body { color: var(--border); margin-bottom: 1.5rem; }
-
-  .sourcing-detail {
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.8;
-    font-style: italic;
-  }
-
-  .ingredients-list {
+  .bundle-list {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.65rem;
+    margin: 2rem 0 2.5rem;
   }
 
-  .ingredient {
+  .bundle-row {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: baseline;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(200,184,166,0.2);
-  }
-
-  .ingredient-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--sand);
-  }
-
-  .ingredient-note {
-    font-size: 0.85rem;
-    color: var(--muted);
-    letter-spacing: 0.06em;
-  }
-
-  /* ── LINKS / CTA ── */
-  .cta-section {
-    background: var(--sand);
-  }
-
-  .cta-section .section-inner {
-    text-align: center;
-    max-width: 640px;
-  }
-
-  .cta-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.2rem;
-    margin-top: 3rem;
-  }
-
-  .cta-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1.5rem;
+    background: var(--light-sand);
     border: 1px solid var(--border);
-    background: white;
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
     text-decoration: none;
-    border-radius: 2px;
-    transition: border-color 0.3s, transform 0.3s;
-    gap: 0.8rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
 
-  .cta-card:hover {
+  .bundle-row:hover {
     border-color: var(--terracotta);
-    transform: translateY(-3px);
+    box-shadow: 0 2px 8px rgba(183,103,58,0.12);
   }
 
-  .cta-icon {
-    font-size: 1.6rem;
-    line-height: 1;
-  }
+  .bundle-left { flex: 1; }
 
-  .cta-title {
+  .bundle-size {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--earth);
+    margin-bottom: 0.15rem;
   }
 
-  .cta-desc {
-    font-size: 0.85rem;
-    color: var(--muted);
-    text-align: center;
+  .bundle-detail { font-size: 0.8rem; color: var(--muted); }
+
+  .bundle-right { display: flex; align-items: center; gap: 1.25rem; }
+
+  .bundle-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    white-space: nowrap;
+  }
+
+  .bundle-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--terracotta);
+    border: none;
+    border-radius: 2px;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .bundle-row:hover .bundle-btn { background: var(--deep-terracotta); }
+
+  .how-box {
+    background: var(--sand);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .how-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--earth);
+    margin-bottom: 1rem;
+  }
+
+  .how-steps { display: flex; flex-direction: column; gap: 0.6rem; }
+  .how-step { display: flex; gap: 0.85rem; align-items: flex-start; }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    min-width: 20px;
     line-height: 1.6;
   }
 
-  .cta-arrow {
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
+  .step-text { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+  .step-text strong { color: var(--earth); font-weight: 500; }
+
+  .ingredient-ref-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--terracotta);
-    margin-top: 0.5rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
   }
+
+  /* ── CONTACT SECTION ── */
+  .contact-section { background: var(--light-sand); }
+  .contact-section .section-inner { max-width: 640px; text-align: center; }
+
+  .form-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.5rem;
+    text-align: left;
+  }
+
+  .alt-contact {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .alt-contact a { color: var(--terracotta); text-decoration: none; }
+  .alt-contact a:hover { text-decoration: underline; }
 
   /* ── FOOTER ── */
   footer {
@@ -700,23 +715,59 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 720px) {
-    .philosophy .section-inner,
-    .sourcing .section-inner {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
+    .scent-grid { grid-template-columns: 1fr; }
+    .hero-circle, .hero-circle-2 { display: none; }
+  }
 
-    .scent-grid {
-      grid-template-columns: 1fr;
-    }
+  @media (max-width: 860px) {
+    .main-nav { padding: 0.8rem 1rem; justify-content: center; text-align: center; }
+    .main-nav-links { justify-content: center; gap: 1rem; font-size: 0.7rem; }
+  }
 
-    .cta-grid {
-      grid-template-columns: 1fr;
-    }
+  @media (max-width: 600px) {
+    .bundle-row { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .bundle-right { width: 100%; justify-content: space-between; }
+  }
 
-    .hero-circle, .hero-circle-2 {
-      display: none;
-    }
+  @media (max-width: 480px) {
+    .main-nav-links { gap: 0.7rem; }
+    .main-nav-links a { font-size: 0.65rem; }
+    .hero-content { padding: 2rem 1rem; }
+    .hero-sub { font-size: 0.9rem; }
+    .section-inner { padding: 3rem 1.2rem; }
+    .section-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+    .scent-card { padding: 1.5rem 1.2rem; }
+    .clean-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .ritual-steps { gap: 1.5rem; }
+    .step-numeral { font-size: 1.5rem; }
+    .footer-links { gap: 1rem; font-size: 0.8rem; }
+    .footer-legal { font-size: 0.72rem; }
+
+    /* Story section */
+    .word-block-title { font-size: clamp(1.4rem, 7vw, 1.9rem); }
+    .word-block-meaning { font-size: 0.85rem; }
+    .story-body p { font-size: 0.9rem; }
+    .story-naming { font-size: 1.05rem; margin: 2.2rem 0; }
+
+    /* Order section */
+    .how-box { padding: 1.2rem 1rem; }
+    .step-text { font-size: 0.85rem; }
+    .bundle-size { font-size: 1rem; }
+    .bundle-price { font-size: 1rem; }
+
+    /* Contact section */
+    .form-card { padding: 1rem; }
+  }
+
+  @media (max-width: 380px) {
+    .main-nav { padding: 0.7rem 0.6rem; }
+    .main-nav-brand { font-size: 0.85rem; }
+    .main-nav-links { gap: 0.55rem; }
+    .main-nav-links a { font-size: 0.6rem; }
+    .section-inner { padding: 2.2rem 1rem; }
+    .badge { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
+    .bundle-row { padding: 0.8rem 1rem; }
+    .word-block-meaning { font-size: 0.78rem; }
   }
 
   /* ── SCROLL REVEAL ── */
@@ -726,56 +777,7 @@
     transition: opacity 0.8s ease, transform 0.8s ease;
   }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .header-split {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    max-width: 860px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  .header-logo-col {
-    flex-shrink: 0;
-  }
-  .header-logo-col img {
-    width: 180px;
-    height: auto;
-    display: block;
-  }
-  .header-text-col {
-    flex: 1;
-    text-align: center;
-  }
-  @media (max-width: 620px) {
-    .header-split { flex-direction: column; text-align: center; }
-    .header-text-col { text-align: center; }
-  }
-
-
-  /* ── MOBILE OPTIMIZATION ── */
-  @media (max-width: 480px) {
-    .hero-content { padding: 2rem 1rem; }
-    .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
-    .hero-sub { font-size: 0.9rem; }
-    .section-inner { padding: 3rem 1.2rem; }
-    .section-title { font-size: clamp(1.6rem, 6vw, 2.4rem); }
-    .scent-card { padding: 1.5rem 1.2rem; }
-    .clean-grid { grid-template-columns: 1fr; gap: 1rem; }
-    .ritual-steps { gap: 1.5rem; }
-    .step-numeral { font-size: 1.5rem; }
-    .bundle-grid, .product-grid { grid-template-columns: 1fr; }
-    .cta-grid { grid-template-columns: 1fr; }
-    .footer-links { gap: 1rem; font-size: 0.8rem; }
-    .footer-legal { font-size: 0.72rem; }
-    nav { padding: 0.8rem 1rem; }
-    .nav-links { gap: 1rem; font-size: 0.75rem; }
-  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
 
 <!-- Start of HubSpot Embed Code -->
@@ -784,14 +786,27 @@
 </head>
 <body>
 
-<!-- ══ HERO ══ -->
-<section class="hero">
+<!-- ══ STICKY NAV ══ -->
+<nav class="main-nav">
+  <a href="#home" class="main-nav-brand">Atabey Botanica</a>
+  <div class="main-nav-links">
+    <a href="#story">Our Story</a>
+    <a href="#ingredients">Ingredients</a>
+    <a href="#collection">Collection</a>
+    <a href="#ritual">Ritual</a>
+    <a href="#order">Order</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ══ HOME / HERO ══ -->
+<section class="hero" id="home">
   <div class="hero-circle"></div>
   <div class="hero-circle hero-circle-2"></div>
 
   <div class="hero-content">
     <img src="assets/Logo.png" alt="Atabey Botanica" style="width:160px; height:auto; margin-bottom:1.2rem;">
-    
+
     <div class="hero-divider"></div>
     <div class="hero-tagline">Come Home to Yourself</div>
     <p class="hero-sub">
@@ -805,13 +820,65 @@
       <span class="badge">Small Batch</span>
       <span class="badge">Preservative-Free</span>
     </div>
-    <a href="order.html" class="btn-primary">Order Now</a>
-      </div>
-    </div>
+    <a href="#order" class="btn-primary">Order Now</a>
+  </div>
 </section>
 
-<!-- ══ WHAT'S NOT IN IT ══ -->
-<section class="clean">
+<!-- ══ OUR STORY ══ -->
+<section class="story-section" id="story">
+  <div class="section-inner reveal">
+    <div class="section-label">Come Home to Yourself</div>
+    <h2 class="section-title" style="color:var(--sand);">Our <em>Story</em></h2>
+
+    <div class="story-body">
+      <p>
+        I founded Atabey Botanica after my cancer journey, when my skin needed extraordinary care and could not tolerate anything synthetic. I needed something pure that the earth made, something my body could receive without fighting.
+      </p>
+      <p>
+        So I went back to the plants my ancestors had always known: frankincense, shea butter, and cocoa butter. Something happened as I started making these blends. It was not only my skin that began to heal.
+      </p>
+      <p>
+        I realized I had spent my life caring for everyone else through my career and my family, and had never made a ritual of caring for myself. So I started slowly, with intention and gratitude, using the butter to nurture every part of me with loving attention, until the ritual became my daily self-care, a devotion I could not rush past.
+      </p>
+      <p>
+        What began as a private return to myself became something I felt called to share, with anyone ready to come back to themselves.
+      </p>
+    </div>
+
+    <div class="story-naming">I called it Atabey Botanica, and here is why.</div>
+
+    <div class="word-block">
+      <div class="word-block-title"><em>Atabey</em></div>
+      <div class="word-block-meaning">ah-tah-BAY &nbsp;·&nbsp; the original mother</div>
+      <div class="word-divider-line"></div>
+      <p>
+        Across the oldest traditions, there is always a first mother, present before language and the naming of things. Every culture near the earth knew her by a different name. The name changes. The truth beneath it does not.
+      </p>
+      <p>
+        We carry her name as a reminder of what we strip away: the synthetic, the unnecessary. What remains is the earth as mother, plant wisdom, a body worth tending.
+      </p>
+    </div>
+
+    <div class="word-block">
+      <div class="word-block-title"><em>Botanica</em></div>
+      <div class="word-block-meaning">bo-TAH-nee-kah &nbsp;·&nbsp; of plants &nbsp;·&nbsp; the world of botanical knowledge</div>
+      <div class="word-divider-line"></div>
+      <p>
+        Long before laboratories, people kept botanical knowledge in their hands, passed down as recipe and ritual. Plants were not a backup plan, they were the plan, and still are.
+      </p>
+      <p>
+        We are not inventing anything. We are remembering.
+      </p>
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="#order" class="btn-primary">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INGREDIENTS (Ingredient Integrity) ══ -->
+<section class="clean" id="ingredients">
   <div class="section-inner reveal">
     <div class="section-label">Ingredient Integrity</div>
 
@@ -864,19 +931,19 @@
     </p>
 
     <div style="text-align:center; margin-top:2.5rem;">
-      <a href="order.html" style="display:inline-block; background:var(--terracotta); color:white; font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:1rem 3rem; border-radius:2px;">Order Now</a>
+      <a href="ingredients.html" style="display:inline-block; background:var(--terracotta); color:white; font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:1rem 3rem; border-radius:2px;">View Full Ingredient Reference →</a>
     </div>
 
   </div>
 </section>
 
-<!-- ══ THE NOURISHING RUB ══ -->
-<section class="products">
+<!-- ══ COLLECTION ══ -->
+<section class="products" id="collection">
   <div class="section-inner reveal">
     <div class="section-label">The Collection</div>
     <h2 class="section-title">Four expressions. <em>One intention.</em></h2>
     <p class="section-body" style="margin: 0 auto;">
-      Each butter is hand-batched in small quantities with pure botanical ingredients. 
+      Each butter is hand-batched in small quantities with pure botanical ingredients.
     </p>
 
     <div class="scent-grid" style="grid-template-columns: repeat(2, 1fr);">
@@ -937,21 +1004,21 @@
     </div>
 
     <div class="order-cta">
-      <a href="ingredients.html" class="btn-primary" style="background: var(--muted);">View Full Ingredient List →</a>
+      <a href="#order" class="btn-primary">Order Now</a>
     </div>
   </div>
 </section>
 
-<!-- ══ SCENTS ══ -->
-<section class="ritual">
+<!-- ══ RITUAL ══ -->
+<section class="ritual" id="ritual">
   <div class="section-inner reveal">
     <div class="section-label">Ancient Practice</div>
     <h2 class="section-title">The Nourishing Rub</h2>
 
     <p class="ritual-intro">
-      Across cultures and centuries, the anointing of the body with warmed plant oils and butters 
-      was never merely cosmetic. It was an act of restoration - of returning the body to itself, 
-      honoring the skin as the boundary between self and world, and acknowledging that care 
+      Across cultures and centuries, the anointing of the body with warmed plant oils and butters
+      was never merely cosmetic. It was an act of restoration - of returning the body to itself,
+      honoring the skin as the boundary between self and world, and acknowledging that care
       of the body is inseparable from care of the spirit.
     </p>
 
@@ -962,8 +1029,8 @@
         <div class="step-content">
           <div class="step-title">Warm &amp; Arrive</div>
           <p class="step-body">
-            Take a small amount of butter between your palms. Let it melt gently from your body heat. 
-            Before you touch your skin, pause. Take one slow breath. 
+            Take a small amount of butter between your palms. Let it melt gently from your body heat.
+            Before you touch your skin, pause. Take one slow breath.
             This moment belongs to you.
           </p>
         </div>
@@ -974,9 +1041,9 @@
         <div class="step-content">
           <div class="step-title">Move with Intention</div>
           <p class="step-body">
-            Begin at your feet - the part of you that carries you through everything. 
-            Work upward with long, deliberate strokes. 
-            Move toward your heart. Let each movement be an acknowledgment: 
+            Begin at your feet - the part of you that carries you through everything.
+            Work upward with long, deliberate strokes.
+            Move toward your heart. Let each movement be an acknowledgment:
             <em>I am here. This body has carried me.</em>
           </p>
         </div>
@@ -987,8 +1054,8 @@
         <div class="step-content">
           <div class="step-title">Tend to What Needs Care</div>
           <p class="step-body">
-            Spend time on the places that hold tension, that hold memory, 
-            that have been through much. The shoulders. The chest. The belly. 
+            Spend time on the places that hold tension, that hold memory,
+            that have been through much. The shoulders. The chest. The belly.
             There is no rush. Linger where the body asks you to.
           </p>
         </div>
@@ -999,9 +1066,9 @@
         <div class="step-content">
           <div class="step-title">Close &amp; Return</div>
           <p class="step-body">
-            Place both hands flat against your heart. 
-            Feel the warmth of the butter, the warmth of your own skin. 
-            You have nourished yourself. Let that be enough - 
+            Place both hands flat against your heart.
+            Feel the warmth of the butter, the warmth of your own skin.
+            You have nourished yourself. Let that be enough -
             and let it be the beginning of coming home, again and again.
           </p>
         </div>
@@ -1011,65 +1078,108 @@
 
     <div class="ritual-affirmation">
       <p class="affirmation-text">
-        "I deserve this time. My body is worth this love and attention. 
+        "I deserve this time. My body is worth this love and attention.
         I am coming home to myself."
       </p>
       <div class="affirmation-close">Come back to yourself. Again and again.</div>
     </div>
 
     <div style="text-align:center; margin-top:2.5rem;">
-      <a href="order.html" style="display:inline-block; background:var(--terracotta); color:white; font-family:'DM Sans',sans-serif; font-size:0.85rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:1rem 3rem; border-radius:2px;">Order Now</a>
+      <a href="#order" class="btn-primary">Order Now</a>
     </div>
 
   </div>
 </section>
 
-<!-- ══ CTA / LINKS ══ -->
-<section class="cta-section">
+<!-- ══ ORDER ══ -->
+<section class="order-section" id="order">
   <div class="section-inner reveal">
-    <div class="section-label">Connect</div>
-    <h2 class="section-title">Where to find us. <em>How to begin.</em></h2>
+    <div class="section-label">Come Home to Yourself</div>
+    <h2 class="section-title">Order Your <em>Ritual</em></h2>
     <p class="section-body" style="margin: 0 auto;">
-      Order a butter. Share your experience. Follow the journey on Instagram. 
-      Everything starts with one small act of returning to yourself.
+      Choose your size below. At checkout, you will be asked which scent you would like — Frankincense, Geranium, Bergamot, or Wild Shield (summer seasonal).
     </p>
 
-    <div class="cta-grid">
-      <a href="order.html" class="cta-card">
-        <div class="cta-icon">✦</div>
-        <div class="cta-title">Place an Order</div>
-        <p class="cta-desc">Choose your scent, your size. Hand-batched and shipped with care.</p>
-        <div class="cta-arrow">Order Now →</div>
+    <div class="bundle-list">
+
+      <a class="bundle-row" href="https://buy.stripe.com/14A5kCdB90Cw5l96wd8bS05" target="_blank">
+        <div class="bundle-left">
+          <div class="bundle-size">Full Size Jar (6oz)</div>
+        </div>
+        <div class="bundle-right">
+          <div class="bundle-price">$34</div>
+          <span class="bundle-btn">Order →</span>
+        </div>
       </a>
 
-      <a href="https://tally.so/r/b58qz2" class="cta-card">
-        <div class="cta-icon">◇</div>
-        <div class="cta-title">Share Feedback</div>
-        <p class="cta-desc">Your experience shapes every batch. Tell us what you felt.</p>
-        <div class="cta-arrow">Give Feedback →</div>
+      <a class="bundle-row" href="https://buy.stripe.com/6oU6oGbt1etmeVJbQx8bS06" target="_blank">
+        <div class="bundle-left">
+          <div class="bundle-size">Travel Size Jar (2oz)</div>
+        </div>
+        <div class="bundle-right">
+          <div class="bundle-price">$14</div>
+          <span class="bundle-btn">Order →</span>
+        </div>
       </a>
 
-      <a href="contact.html" class="cta-card">
-        <div class="cta-icon">✉</div>
-        <div class="cta-title">Get in Touch</div>
-        <p class="cta-desc">Questions, wholesale inquiries, or just want to connect - we would love to hear from you.</p>
-        <div class="cta-arrow">Send a Message →</div>
-      </a>
+    </div>
 
-      <a href="https://www.instagram.com/atabeybotanica/" class="cta-card">
-        <div class="cta-icon">⊹</div>
-        <div class="cta-title">Follow on Instagram</div>
-        <p class="cta-desc">Behind the batches, the botanicals, and the practice. @AtabeyBotanica</p>
-        <div class="cta-arrow">Follow Along →</div>
-      </a>
+    <div class="how-box">
+      <div class="how-title">How ordering works</div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>Choose your size</strong> above and tap Order →</div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">2</div>
+          <div class="step-text">On the checkout page, you will see a field: <strong>"Which scent would you like?"</strong> Type your selection there. Example: <em>Frankincense</em> or <em>Bergamot</em></div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>Complete your payment.</strong> Stripe collects your shipping address and sends a receipt to your email automatically.</div>
+        </div>
+        <div class="how-step">
+          <div class="step-num">4</div>
+          <div class="step-text">Your order is <strong>hand-batched and shipped with care.</strong> Questions? <a href="#contact" style="color:var(--terracotta);">Get in touch</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="ingredients.html" class="ingredient-ref-link">See the Full Ingredient Reference →</a>
     </div>
   </div>
 </section>
 
-<!-- ORDER CTA STRIP -->
-<div style="background: var(--terracotta); padding: 2rem; text-align: center;">
-  <a href="order.html" style="display:inline-block; background:white; color:var(--terracotta); font-family:'DM Sans',sans-serif; font-size:0.8rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; text-decoration:none; padding:1rem 3rem; border-radius:2px;">Order Now</a>
-</div>
+<!-- ══ CONTACT ══ -->
+<section class="contact-section" id="contact">
+  <div class="section-inner reveal">
+    <div class="section-label">Come Home to Yourself</div>
+    <h2 class="section-title">Get in <em>Touch</em></h2>
+    <p class="section-body" style="margin: 0 auto 2rem;">
+      Whether you are placing an order, exploring a partnership, or just want to say hello, I would love to hear from you.
+    </p>
+
+    <div class="form-card">
+      <div id="hubspot-contact-form"></div>
+    </div>
+
+    <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+      hbspt.forms.create({
+        portalId: "246545402",
+        formId: "650b640f-9cdb-48e8-93c9-a811e7eff741",
+        region: "na2",
+        target: "#hubspot-contact-form"
+      });
+    </script>
+
+    <p class="alt-contact">
+      Prefer email? Reach me directly at <a href="mailto:hello@atabeybotanica.com">hello@atabeybotanica.com</a>
+    </p>
+  </div>
+</section>
 
 <!-- ══ FOOTER ══ -->
 <footer>
@@ -1077,11 +1187,8 @@
   <div class="footer-brand">Atabey Botanica</div>
   <div class="footer-tagline">Mother Nature has everything we need.</div>
   <div class="footer-links">
-    <a href="order.html">Order</a>
+    <a href="ingredients.html">Ingredient Reference</a>
     <a href="https://tally.so/r/b58qz2">Feedback</a>
-    <a href="story.html">Our Story</a>
-    <a href="ingredients.html">Ingredients</a>
-    <a href="contact.html">Contact</a>
     <a href="https://www.instagram.com/atabeybotanica/">Instagram</a>
   </div>
   <p class="footer-legal">
