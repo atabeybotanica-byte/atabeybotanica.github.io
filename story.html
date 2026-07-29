@@ -2,11 +2,207 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=index.html#story">
-<link rel="canonical" href="https://atabeybotanica.com/index.html#story">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atabey Botanica | Our Story</title>
+<meta name="description" content="The story behind Atabey Botanica: a return to plant-based ritual after a cancer journey, and what the name Atabey Botanica means.">
+
+<meta property="og:title" content="Atabey Botanica | Our Story">
+<meta property="og:description" content="The story behind Atabey Botanica: a return to plant-based ritual after a cancer journey, and what the name Atabey Botanica means.">
+<meta property="og:image" content="https://atabeybotanica.com/assets/og-image.png">
+<meta property="og:url" content="https://atabeybotanica.com/story.html">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atabey Botanica | Our Story">
+<meta name="twitter:description" content="The story behind Atabey Botanica: a return to plant-based ritual after a cancer journey, and what the name Atabey Botanica means.">
+<meta name="twitter:image" content="https://atabeybotanica.com/assets/og-image.png">
+
+<link rel="canonical" href="https://atabeybotanica.com/story.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --terracotta: #B7673A;
+    --sand: #F5EFE6;
+    --earth: #2C2218;
+    --muted: #5C4A3A;
+    --border: #C8B8A6;
+    --light-sand: #FAF6F1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--earth); color: var(--sand); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+
+  .page-header { padding: 3rem 2rem 2rem; text-align: center; }
+  .back-link { display: inline-block; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: #FAF6F1; text-decoration: none; margin-bottom: 1.5rem; transition: color 0.2s; }
+  .back-link:hover { color: var(--terracotta); }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 500; color: var(--sand); line-height: 1.2; margin-bottom: 0.6rem; }
+  .page-title em { color: var(--terracotta); font-style: italic; }
+  .page-sub { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--border); }
+
+  .page-body { max-width: 720px; margin: 0 auto; padding: 1rem 2rem 5rem; }
+
+  .story-body p {
+    font-size: 0.95rem;
+    color: var(--border);
+    line-height: 2;
+    margin-bottom: 1.4rem;
+    max-width: 680px;
+  }
+  .story-body p:last-child { margin-bottom: 0; }
+
+  .story-naming {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--terracotta);
+    text-align: center;
+    margin: 3rem 0;
+  }
+
+  .word-block { margin-top: 3rem; }
+  .word-block-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 600;
+    color: var(--sand);
+    margin-bottom: 0.3rem;
+  }
+  .word-block-title em { color: var(--terracotta); font-style: italic; }
+  .word-block-meaning {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--border);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.2rem;
+  }
+  .word-divider-line {
+    width: 36px;
+    height: 1px;
+    background: var(--terracotta);
+    opacity: 0.6;
+    margin-bottom: 1.2rem;
+  }
+  .word-block p {
+    font-size: 0.9rem;
+    color: var(--border);
+    line-height: 1.9;
+    margin-bottom: 1rem;
+    max-width: 640px;
+  }
+  .word-block p:last-child { margin-bottom: 0; }
+
+  .btn-primary {
+    display: inline-block;
+    background: var(--terracotta);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 2px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .btn-primary:hover { background: #9A5530; transform: translateY(-2px); }
+
+  footer { background: var(--earth); padding: 2rem; text-align: center; border-top: 1px solid rgba(200,184,166,0.2); }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--sand); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .footer-tagline { font-size: 0.85rem; color: #FAF6F1; font-style: italic; margin-bottom: 1.2rem; }
+  .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: #FAF6F1; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--terracotta); }
+
+  @media (max-width: 480px) {
+    .page-header { padding: 2rem 1rem 1.5rem; }
+    .page-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+    .page-body { padding: 0.5rem 1rem 3rem; }
+    .word-block-title { font-size: clamp(1.4rem, 7vw, 1.9rem); }
+    .word-block-meaning { font-size: 0.85rem; }
+    .story-body p { font-size: 0.9rem; }
+    .story-naming { font-size: 1.05rem; margin: 2.2rem 0; }
+    .footer-links { gap: 1rem; font-size: 0.8rem; }
+  }
+</style>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/246545402.js"></script>
+<!-- End of HubSpot Embed Code -->
 </head>
 <body>
-<p>This page has moved. <a href="index.html#story">Continue to Our Story</a>.</p>
+
+<div class="page-header">
+  <a href="index.html" class="back-link">← Back to Atabey Botanica</a>
+  <img src="assets/Logo.png" alt="Atabey Botanica" style="width:140px; height:auto; display:block; margin:0 auto 1.5rem;">
+  <div class="page-sub">Come Home to Yourself</div>
+  <h1 class="page-title">Our <em>Story</em></h1>
+</div>
+
+<div class="page-body">
+
+  <div class="story-body">
+    <p>
+      I founded Atabey Botanica after my cancer journey, when my skin needed extraordinary care and my body could no longer tolerate what once seemed ordinary. I longed for ingredients my body could receive with gentleness, so I returned to the plants my ancestors had trusted for generations.
+    </p>
+    <p>
+      What I discovered was far greater than a nourishing body butter.
+    </p>
+    <p>
+      For years, I poured my energy into caring for my career, my family, and everyone around me. Cancer taught me I couldn't rush past my own care anymore. I had to slow down. I had to care for myself with the same devotion I had always given others.
+    </p>
+    <p>
+      Each day, applying body butter became more than skincare. It became a quiet ritual, a moment to pause, breathe, and reconnect with myself. In that stillness, I learned that self care isn't a luxury. It's non-negotiable.
+    </p>
+    <p>
+      That daily ritual changed the way I cared for myself, and it became the heart of Atabey Botanica.
+    </p>
+    <p>
+      Today, every jar is an invitation to pause, nourish your skin, and remember that caring for yourself is one of the greatest gifts you can give yourself.
+    </p>
+  </div>
+
+  <div class="story-naming">I called it Atabey Botanica, and here is why.</div>
+
+  <div class="word-block">
+    <div class="word-block-title"><em>Atabey</em></div>
+    <div class="word-block-meaning">ah-tah-BAY &nbsp;·&nbsp; the original mother</div>
+    <div class="word-divider-line"></div>
+    <p>
+      Across the world's oldest traditions, there is always a first mother, present long before language and the naming of things. The names may change, but the truth beneath them does not. We carry her name as a reminder to return to what endures: the wisdom of the earth, the intelligence of plants, and a body worthy of care. By stripping away the synthetic and the unnecessary, we make space for what has always been enough.
+    </p>
+  </div>
+
+  <div class="word-block">
+    <div class="word-block-title"><em>Botanica</em></div>
+    <div class="word-block-meaning">bo-TAH-nee-kah &nbsp;·&nbsp; of plants &nbsp;·&nbsp; the world of botanical knowledge</div>
+    <div class="word-divider-line"></div>
+    <p>
+      Long before laboratories, people kept botanical knowledge in their hands, passed down as recipe and ritual. Plants were not a backup plan, they were the plan, and still are. We are not inventing anything. We are remembering.
+    </p>
+  </div>
+
+  <div style="text-align:center; margin-top:2.5rem;">
+    <a href="index.html#order" class="btn-primary">Order Now</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">Atabey Botanica</div>
+  <div class="footer-tagline">Mother Nature has everything we need.</div>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="ingredients.html">Ingredient Reference</a>
+    <a href="index.html#order">Order</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="https://www.instagram.com/atabeybotanica/">Instagram</a>
+  </div>
+</footer>
+
 </body>
 </html>

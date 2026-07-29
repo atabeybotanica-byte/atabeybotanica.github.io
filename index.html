@@ -280,61 +280,6 @@
     max-width: 620px;
   }
 
-  /* ── STORY SECTION ── */
-  .story-section { background: var(--earth); color: var(--sand); }
-  .story-section .section-inner { max-width: 720px; }
-  .story-section .section-label { color: var(--border); }
-  .story-body p {
-    font-size: 0.95rem;
-    color: var(--border);
-    line-height: 2;
-    margin-bottom: 1.4rem;
-    max-width: 680px;
-  }
-  .story-body p:last-child { margin-bottom: 0; }
-
-  .story-naming {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    color: var(--terracotta);
-    text-align: center;
-    margin: 3rem 0;
-  }
-
-  .word-block { margin-top: 3rem; }
-  .word-block-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-    font-weight: 600;
-    color: var(--sand);
-    margin-bottom: 0.3rem;
-  }
-  .word-block-title em { color: var(--terracotta); font-style: italic; }
-  .word-block-meaning {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
-    font-style: italic;
-    color: var(--border);
-    letter-spacing: 0.05em;
-    margin-bottom: 1.2rem;
-  }
-  .word-divider-line {
-    width: 36px;
-    height: 1px;
-    background: var(--terracotta);
-    opacity: 0.6;
-    margin-bottom: 1.2rem;
-  }
-  .word-block p {
-    font-size: 0.9rem;
-    color: var(--border);
-    line-height: 1.9;
-    margin-bottom: 1rem;
-    max-width: 640px;
-  }
-  .word-block p:last-child { margin-bottom: 0; }
-
   /* ── WHAT'S NOT IN IT ── */
   .clean { background: white; }
   .clean .section-inner { text-align: center; }
@@ -743,12 +688,6 @@
     .footer-links { gap: 1rem; font-size: 0.8rem; }
     .footer-legal { font-size: 0.72rem; }
 
-    /* Story section */
-    .word-block-title { font-size: clamp(1.4rem, 7vw, 1.9rem); }
-    .word-block-meaning { font-size: 0.85rem; }
-    .story-body p { font-size: 0.9rem; }
-    .story-naming { font-size: 1.05rem; margin: 2.2rem 0; }
-
     /* Order section */
     .how-box { padding: 1.2rem 1rem; }
     .step-text { font-size: 0.85rem; }
@@ -767,7 +706,6 @@
     .section-inner { padding: 2.2rem 1rem; }
     .badge { font-size: 0.72rem; padding: 0.3rem 0.7rem; }
     .bundle-row { padding: 0.8rem 1rem; }
-    .word-block-meaning { font-size: 0.78rem; }
   }
 
   /* ── SCROLL REVEAL ── */
@@ -790,7 +728,7 @@
 <nav class="main-nav">
   <a href="#home" class="main-nav-brand">Atabey Botanica</a>
   <div class="main-nav-links">
-    <a href="#story">Our Story</a>
+    <a href="story.html">Our Story</a>
     <a href="#ingredients">Ingredients</a>
     <a href="#collection">Collection</a>
     <a href="#ritual">Ritual</a>
@@ -821,59 +759,6 @@
       <span class="badge">Preservative-Free</span>
     </div>
     <a href="#order" class="btn-primary">Order Now</a>
-  </div>
-</section>
-
-<!-- ══ OUR STORY ══ -->
-<section class="story-section" id="story">
-  <div class="section-inner reveal">
-    <div class="section-label">Come Home to Yourself</div>
-    <h2 class="section-title" style="color:var(--sand);">Our <em>Story</em></h2>
-
-    <div class="story-body">
-      <p>
-        I founded Atabey Botanica after my cancer journey, when my skin needed extraordinary care and my body could no longer tolerate what once seemed ordinary. I longed for ingredients my body could receive without resistance.
-      </p>
-      <p>
-        So I returned to the plants my ancestors had trusted for generations: frankincense, shea butter, and cocoa butter.
-      </p>
-      <p>
-        As I began creating these botanical blends, something unexpected happened. It wasn't only my skin that began to heal.
-      </p>
-      <p>
-        For most of my life, I had poured my energy into caring for others through my career, my family, and the people who depended on me. Somewhere along the way, I had forgotten how to care for myself.
-      </p>
-      <p>
-        What started as applying body butter slowly became something much deeper. Each day became a quiet ritual of intention and gratitude. Instead of rushing through another task, I learned to slow down, nourish my skin, breathe deeply, and offer myself the same care I had so freely given everyone else. The ritual became a daily act of devotion.
-      </p>
-      <p>
-        What began as a private return to myself became something I felt called to share. Today, every jar is an invitation to pause, reconnect, and remember that caring for yourself is never indulgent. It is one of the most important ways we begin to heal.
-      </p>
-    </div>
-
-    <div class="story-naming">I called it Atabey Botanica, and here is why.</div>
-
-    <div class="word-block">
-      <div class="word-block-title"><em>Atabey</em></div>
-      <div class="word-block-meaning">ah-tah-BAY &nbsp;·&nbsp; the original mother</div>
-      <div class="word-divider-line"></div>
-      <p>
-        Across the world's oldest traditions, there is always a first mother, present long before language and the naming of things. Every culture knew her by a different name. The names may change, but the truth beneath them does not. We carry her name as a reminder to return to what endures: the wisdom of the earth, the intelligence of plants, and a body worthy of care. By stripping away the synthetic and the unnecessary, we make space for what has always been enough.
-      </p>
-    </div>
-
-    <div class="word-block">
-      <div class="word-block-title"><em>Botanica</em></div>
-      <div class="word-block-meaning">bo-TAH-nee-kah &nbsp;·&nbsp; of plants &nbsp;·&nbsp; the world of botanical knowledge</div>
-      <div class="word-divider-line"></div>
-      <p>
-        Long before laboratories, botanical knowledge lived in the hands of those who gathered, blended, and passed it from one generation to the next. It was preserved through recipes, rituals, and lived experience. Plants were never an alternative. They were humanity's first teachers, offering nourishment, comfort, and care through generations of observation and practice. At Atabey Botanica, we are not inventing something new. We are remembering something timeless.
-      </p>
-    </div>
-
-    <div style="text-align:center; margin-top:2.5rem;">
-      <a href="#order" class="btn-primary">Order Now</a>
-    </div>
   </div>
 </section>
 
@@ -1183,6 +1068,7 @@
   <div class="footer-brand">Atabey Botanica</div>
   <div class="footer-tagline">Mother Nature has everything we need.</div>
   <div class="footer-links">
+    <a href="story.html">Our Story</a>
     <a href="ingredients.html">Ingredient Reference</a>
     <a href="https://tally.so/r/b58qz2">Feedback</a>
     <a href="https://www.instagram.com/atabeybotanica/">Instagram</a>
