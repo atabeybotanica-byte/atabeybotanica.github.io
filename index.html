@@ -538,6 +538,41 @@
   .order-section { background: white; }
   .order-section .section-inner { max-width: 720px; }
 
+  .order-intro-wrap {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .order-intro-img {
+    flex: 0 0 42%;
+    max-width: 300px;
+  }
+
+  .order-intro-img img {
+    width: 100%;
+    height: auto;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 2px;
+    display: block;
+  }
+
+  .order-intro-text { flex: 1; }
+  .order-intro-text .section-label { margin-bottom: 0.8rem; }
+  .order-intro-text .section-title { margin-bottom: 0; }
+
+  @media (max-width: 720px) {
+    .order-intro-wrap { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .order-intro-img { max-width: 240px; }
+  }
+
+  @media (max-width: 480px) {
+    .order-intro-img { max-width: 190px; }
+    .order-intro-img img { max-height: 260px; }
+  }
+
   .bundle-list {
     display: flex;
     flex-direction: column;
@@ -1058,8 +1093,15 @@
 <!-- ══ ORDER ══ -->
 <section class="order-section" id="order">
   <div class="section-inner reveal">
-    <div class="section-label">Come Home to Yourself</div>
-    <h2 class="section-title">Order Your <em>Ritual</em></h2>
+    <div class="order-intro-wrap">
+      <div class="order-intro-img">
+        <img src="assets/Collection.jpg" alt="Atabey Botanica whipped body butter collection: Bergamot, Frankincense, Geranium, and Calendula" loading="lazy">
+      </div>
+      <div class="order-intro-text">
+        <div class="section-label">Come Home to Yourself</div>
+        <h2 class="section-title">Order Your <em>Ritual</em></h2>
+      </div>
+    </div>
     <div class="bundle-list">
 
       <a class="bundle-row" href="https://buy.stripe.com/9B66oG8gP3OIdRFdYF8bS07" target="_blank">
