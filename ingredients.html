@@ -136,6 +136,28 @@
   }
 
 
+  /* ── EDITORIAL BANNER ── */
+  .ingr-banner { position: relative; width: 100%; overflow: hidden; max-height: 320px; line-height: 0; }
+  .ingr-banner img { width: 100%; height: 100%; object-fit: cover; display: block; max-height: 320px; }
+  .ingr-banner-caption {
+    position: absolute;
+    left: 1.8rem;
+    bottom: 1.3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #FAF6F1;
+    text-shadow: 0 2px 12px rgba(44,34,24,0.55);
+    max-width: 80%;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    .ingr-banner, .ingr-banner img { max-height: 180px; }
+    .ingr-banner-caption { left: 1rem; bottom: 0.8rem; font-size: 0.95rem; }
+  }
+
   /* ── MOBILE OPTIMIZATION ── */
   @media (max-width: 480px) {
     .page-header { padding: 2rem 1rem 1.5rem; }
@@ -162,6 +184,11 @@
 <!-- End of HubSpot Embed Code -->
 </head>
 <body>
+
+<div class="ingr-banner">
+  <img src="assets/Ritual-Banner.jpg" alt="Whipped body butter with a heart traced into its surface" loading="lazy">
+  <div class="ingr-banner-caption">"Self care isn't a luxury.<br>It's non-negotiable."</div>
+</div>
 
 <div class="page-header">
   <div style="text-align:center; margin-bottom:1.5rem;"><a href="index.html" class="back-link">← Back to Atabey Botanica</a></div>
@@ -222,7 +249,7 @@
     </div>
 
     <p style="font-size:0.8rem; color:var(--muted); font-style:italic; line-height:1.7;">
-      This base is the same in every Atabey Botanica body butter. What makes each scent distinct is the botanical added at the finish.
+      This base is shared across most of our body butters, with Calendula built on a lightly modified version to carry its hand-infused botanical. What makes each scent distinct is the plant added at the finish.
     </p>
   </div>
 
@@ -232,6 +259,31 @@
   <div class="section-label">The collection</div>
   <h2 class="section-title" style="margin-bottom:0.5rem;">The <em>essential oils</em></h2>
 
+
+  <!-- CALENDULA -->
+  <div class="scent-section">
+    <div class="scent-header">
+      <div class="scent-name">Calendula</div>
+      <div class="scent-desc">Gentle · Comforting · Restorative</div>
+    </div>
+    <div class="scent-body">
+      <div class="single-eo-note">
+        <div class="single-eo-icon">✦</div>
+        <div class="single-eo-text">
+          <strong>Calendula Flower Extract</strong>
+          A golden traditional flower, hand-infused with no added fragrance, carrying only its own natural aroma. Valued as a gentle skin conditioner rich in antioxidant-supporting flavonoids, cherished across generations.
+        </div>
+      </div>
+      <div class="label-line">
+        <div class="label-line-title" style="text-transform:none; letter-spacing:0;">How it's made</div>
+        <div class="label-line-text" style="font-style:normal;">Hand-infused in small batches: dried calendula blossoms steeped slowly in castor oil before being whipped into the base.</div>
+      </div>
+      <div class="label-line">
+        <div class="label-line-title">Full ingredient list as it appears on the label</div>
+        <div class="label-line-text">Unrefined Shea Butter, Jojoba Oil, Castor Oil, Unrefined Cocoa Butter, Fractionated Coconut Oil, Vitamin E, Calendula Flower Extract</div>
+      </div>
+    </div>
+  </div>
 
   <!-- FRANKINCENSE -->
   <div class="scent-section">
@@ -292,96 +344,6 @@
       <div class="label-line">
         <div class="label-line-title">Full ingredient list as it appears on the label</div>
         <div class="label-line-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Vitamin E, Bergamot Essential Oil</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- WILD SHIELD -->
-  <div class="scent-section">
-    <div class="scent-header">
-      <div class="scent-name">Wild Shield</div>
-      <div class="scent-desc">Bug Barrier &nbsp;|&nbsp; Botanical Repellent &nbsp;·&nbsp; <span style="font-size:0.6rem; background:var(--terracotta); color:white; padding:0.15rem 0.5rem; border-radius:20px; letter-spacing:0.1em;">Summer Seasonal</span></div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note" style="margin-bottom:1.4rem;">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          A botanical blend - each oil chosen for its traditional use in repelling mosquitoes and ticks. It absorbs cleanly, leaves no greasy residue, and wears comfortably in summer heat. Protection you will actually want to put on.
-        </div>
-      </div>
-      <div style="margin-bottom:1.2rem;">
-        <div class="label-line-title" style="margin-bottom:0.6rem;">Additional base ingredients in Wild Shield</div>
-        <div style="display:flex; flex-direction:column; gap:0; border:1px solid var(--border); border-radius:2px; overflow:hidden;">
-          <div style="display:grid; grid-template-columns:220px 1fr; background:white; border-bottom:1px solid var(--border);">
-            <div style="padding:0.8rem 1.2rem; font-size:0.9rem; font-weight:500; color:var(--earth);">Sesame Seed Oil</div>
-            <div style="padding:0.8rem 1.2rem; border-left:1px solid var(--border); font-size:0.85rem; color:var(--muted); line-height:1.6;">Rich in antioxidants and naturally protective. Absorbs well and adds a soft, skin-conditioning layer.</div>
-          </div>
-          <div style="display:grid; grid-template-columns:220px 1fr; background:white;">
-            <div style="padding:0.8rem 1.2rem; font-size:0.9rem; font-weight:500; color:var(--earth);">Arrowroot Powder</div>
-            <div style="padding:0.8rem 1.2rem; border-left:1px solid var(--border); font-size:0.85rem; color:var(--muted); line-height:1.6;">A fine plant starch that absorbs excess moisture on the skin. Gives the butter a dry, silky finish - no greasiness, even in summer heat.</div>
-          </div>
-        </div>
-      </div>
-      <table class="eo-table">
-        <thead>
-          <tr>
-            <th>Essential Oil</th>
-            <th>What it repels</th>
-            <th>What it brings to the skin</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="eo-name">Citronella</span></td>
-            <td><span class="eo-role">Mosquitoes, ticks, wasps</span></td>
-            <td><span class="eo-role">Cleansing, refreshing, deodorizing</span></td>
-          </tr>
-          <tr>
-            <td><span class="eo-name">Cedarwood</span></td>
-            <td><span class="eo-role">Ticks at all life stages</span></td>
-            <td><span class="eo-role">Astringent, grounding, skin-toning</span></td>
-          </tr>
-          <tr>
-            <td><span class="eo-name">Rosemary</span></td>
-            <td><span class="eo-role">Mosquitoes, wasps</span></td>
-            <td><span class="eo-role">Purifying, energising to the skin</span></td>
-          </tr>
-          <tr>
-            <td><span class="eo-name">Lemongrass</span></td>
-            <td><span class="eo-role">Mosquitoes, wasps</span></td>
-            <td><span class="eo-role">Clarifying, brightening</span></td>
-          </tr>
-          <tr>
-            <td><span class="eo-name">Thyme</span></td>
-            <td><span class="eo-role">Ticks, mosquitoes</span></td>
-            <td><span class="eo-role">Purifying</span></td>
-          </tr>
-          <tr>
-            <td><span class="eo-name">Clove Bud</span></td>
-            <td><span class="eo-role">Wasps, mosquitoes, ticks</span></td>
-            <td><span class="eo-role">Warming, traditional insect-deterrent use</span></td>
-          </tr>
-          <tr>
-            <td><span class="eo-name">Geranium</span></td>
-            <td><span class="eo-role">Mosquitoes, midges</span></td>
-            <td><span class="eo-role">Skin-renewing, balancing</span></td>
-          </tr>
-          <tr>
-            <td><span class="eo-name">Peppermint</span></td>
-            <td><span class="eo-role">Mosquitoes, ants, spiders</span></td>
-            <td><span class="eo-role">Cooling, refreshing, clarifying</span></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="label-line">
-        <div class="label-line-title">Full ingredient list as it appears on the label</div>
-        <div class="label-line-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Sesame Seed Oil, Arrowroot Powder, Vitamin E, Citronella, Cedarwood, Rosemary, Lemongrass, Geranium, Thyme and Peppermint Essential Oils</div>
-      </div>
-
-      <div class="caution-box">
-        <strong>Application note</strong>
-        Do not apply over cuts, wounds, irritated, or sunburned skin. Reapply every 5-6 hours for outdoor activity. Patch test recommended for those with known sensitivities.
       </div>
     </div>
   </div>

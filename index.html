@@ -280,6 +280,66 @@
     max-width: 620px;
   }
 
+  /* ── RITUAL GLIMPSE (hero → ingredients bridge) ── */
+  .ritual-glimpse { background: var(--light-sand); }
+
+  .ritual-glimpse-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.75rem 2rem;
+  }
+
+  .ritual-glimpse-wrap {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .ritual-glimpse-img {
+    flex: 0 0 40%;
+    max-width: 320px;
+  }
+
+  .ritual-glimpse-img img {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 2px;
+    display: block;
+  }
+
+  .ritual-glimpse-text { flex: 1; }
+
+  .ritual-glimpse-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    color: var(--earth);
+    line-height: 1.4;
+    margin-bottom: 0.9rem;
+  }
+
+  .ritual-glimpse-sub {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 420px;
+  }
+
+  @media (max-width: 720px) {
+    .ritual-glimpse-wrap { flex-direction: column; text-align: center; gap: 1.5rem; }
+    .ritual-glimpse-img { max-width: 260px; }
+    .ritual-glimpse-sub { margin: 0 auto; }
+  }
+
+  @media (max-width: 480px) {
+    .ritual-glimpse-inner { padding: 2rem 1.2rem; }
+    .ritual-glimpse-img { max-width: 200px; }
+    .ritual-glimpse-img img { max-height: 260px; }
+  }
+
   /* ── WHAT'S NOT IN IT ── */
   .clean { background: white; }
   .clean .section-inner { text-align: center; }
@@ -761,6 +821,21 @@
   </div>
 </section>
 
+<!-- ══ RITUAL GLIMPSE ══ -->
+<section class="ritual-glimpse">
+  <div class="ritual-glimpse-inner reveal">
+    <div class="ritual-glimpse-wrap">
+      <div class="ritual-glimpse-img">
+        <img src="assets/Ritual-Wrapped.jpg" alt="Whipped body butter with a heart traced into its surface" loading="lazy">
+      </div>
+      <div class="ritual-glimpse-text">
+        <p class="ritual-glimpse-quote">"Self care isn't a luxury.<br>It's non-negotiable."</p>
+        <p class="ritual-glimpse-sub">Every jar is hand-whipped in small batches, meant to be a pause in your day, not another task on the list.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ INGREDIENTS (Ingredient Integrity) ══ -->
 <section class="clean" id="ingredients">
   <div class="section-inner reveal">
@@ -832,6 +907,20 @@
 
     <div class="scent-grid" style="grid-template-columns: repeat(2, 1fr);">
       <div class="scent-card">
+        <img src="assets/Calendula.jpg" alt="Calendula body butter" style="width:100%; max-height:220px; object-fit:contain; object-position:center; display:block; margin-bottom:1.2rem; background:var(--light-sand);">
+        <div class="scent-name">Calendula</div>
+        <div class="scent-descriptors">
+          <span class="descriptor">Gentle</span>
+          <span class="descriptor">Comforting</span>
+          <span class="descriptor">Restorative</span>
+        </div>
+        <div class="scent-divider"></div>
+        <p class="scent-note">
+          A golden traditional flower, hand-infused with no added fragrance, carrying only its own natural aroma. Valued as a gentle skin conditioner rich in antioxidant-supporting flavonoids, cherished across generations.
+        </p>
+      </div>
+
+      <div class="scent-card">
         <img src="assets/Frankincense.jpg" alt="Frankincense body butter" style="width:100%; max-height:220px; object-fit:contain; object-position:center; display:block; margin-bottom:1.2rem; background:var(--light-sand);">
         <div class="scent-name">Frankincense</div>
         <div class="scent-descriptors">
@@ -870,19 +959,6 @@
         <div class="scent-divider"></div>
         <p class="scent-note">
           A sun-ripened citrus oil, light and fast-absorbing, with a long tradition of brightening mood as much as skin. Bright, fresh, and unmistakably uplifting.
-        </p>
-      </div>
-      <div class="scent-card" style="position: relative; overflow: hidden;">
-        <img src="assets/Wild%20Shield.jpg" alt="Wild Shield body butter" style="width:100%; max-height:220px; object-fit:contain; object-position:center; display:block; margin-bottom:1.2rem; background:var(--light-sand);">
-        <div style="position: absolute; top: 0.8rem; right: 0.8rem; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; background: var(--earth); color: var(--sand); padding: 0.25rem 0.6rem; border-radius: 40px;">Summer Seasonal</div>
-        <div class="scent-name">Wild Shield</div>
-        <div class="scent-descriptors">
-          <span class="descriptor">Bug Barrier</span>
-          <span class="descriptor">Botanical Repellent</span>
-        </div>
-        <div class="scent-divider"></div>
-        <p class="scent-note">
-          A botanical blend - each oil chosen for its traditional use in repelling mosquitoes and ticks. Leaves no greasy residue, and wears comfortably in summer heat. Protection you will actually want to put on.
         </p>
       </div>
     </div>
