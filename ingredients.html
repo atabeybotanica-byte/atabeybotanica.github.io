@@ -177,6 +177,87 @@
     nav { padding: 0.8rem 1rem; }
     .nav-links { gap: 1rem; font-size: 0.75rem; }
   }
+
+  /* ══ INGREDIENT REFERENCE REDESIGN (Oct 2026) ══ */
+  .ingr-banner-caption.ir-caption {
+    left: 50%; bottom: 50%; transform: translate(-50%, 50%);
+    width: 90%; max-width: none; text-align: center;
+    font-style: normal; font-weight: 500;
+    font-size: clamp(0.95rem, 2.4vw, 1.5rem);
+    letter-spacing: 0.24em; text-transform: uppercase;
+  }
+  .ir-kicker { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); margin: 0.4rem 0 1rem; }
+  .ir-intro { font-size: 0.95rem; color: #FAF6F1; max-width: 540px; margin: 0 auto; line-height: 1.9; }
+
+  .ir-wrap { max-width: 920px; margin: 0 auto; padding: 0 2rem; }
+  .ir-section { padding: 5rem 0 1rem; }
+  .ir-eyebrow { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.8rem; text-align: center; }
+  .ir-h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 500; line-height: 1.15; text-align: center; margin-bottom: 3rem; }
+
+  /* Foundation table: lines, not boxes */
+  .ir-table { max-width: 760px; margin: 0 auto; }
+  .ir-row { display: grid; grid-template-columns: 240px 1fr; gap: 2rem; padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+  .ir-row.ir-head { padding: 0 0 0.7rem; font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .ir-row .ir-ing { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--earth); padding-top: 0.15rem; }
+  .ir-row .ir-what { font-size: 0.95rem; color: var(--muted); line-height: 1.75; }
+  .ir-note { max-width: 760px; margin: 1.6rem auto 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: var(--muted); line-height: 1.6; text-align: center; }
+
+  /* Botanical entries */
+  .ir-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.5rem 4rem; }
+  .ir-item { scroll-margin-top: 90px; }
+  .ir-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 500; line-height: 1.1; margin-bottom: 0.35rem; }
+  .ir-desc { font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1.2rem; }
+  .ir-ing-name { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--earth); margin-bottom: 0.3rem; }
+  .ir-copy { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.1rem; }
+  .ir-list { padding-top: 0.9rem; border-top: 1px solid var(--border); }
+  .ir-list-label { font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
+  .ir-list-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--earth); line-height: 1.55; }
+
+  /* Formulas: set apart from the botanicals */
+  .ir-formulas { margin-top: 5rem; padding-top: 4rem; border-top: 1px solid var(--border); }
+  .ir-subhead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; color: var(--muted); text-align: center; margin: -1.8rem 0 3rem; }
+  .ir-formula { display: grid; grid-template-columns: 260px 1fr; gap: 2.5rem; padding: 2.5rem 0; border-bottom: 1px solid var(--border); scroll-margin-top: 90px; }
+  .ir-formula:first-of-type { padding-top: 0; }
+  .ir-formula .ir-name { font-size: 1.55rem; }
+  .ir-formulas .ir-h2 { font-size: clamp(1.6rem, 3.2vw, 2.1rem); }
+  .ir-formula { padding: 2rem 0; }
+  .ir-formula .ir-copy { margin-bottom: 1rem; }
+  .ir-blends .ir-desc { margin-bottom: 1rem; }
+  .ir-source-body { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2.4vw, 1.5rem) !important; line-height: 1.7 !important; margin-bottom: 0 !important; }
+  .ir-source .ir-rule { margin-bottom: 2.2rem; }
+  .ir-pair { margin-bottom: 1.1rem; }
+  .ir-pair .ir-copy { margin-bottom: 0; }
+
+  /* Rollers */
+  .ir-rollers { padding: 3rem 0 0; scroll-margin-top: 90px; }
+  .ir-rollers-intro { font-size: 0.95rem; color: var(--muted); line-height: 1.8; text-align: center; max-width: 520px; margin: 0 auto 2.5rem; }
+  .ir-blends { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .ir-affirm { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--terracotta); line-height: 1.4; margin-bottom: 0.6rem; }
+  .ir-blends .ir-name { font-size: 1.6rem; }
+  .ir-label-line { max-width: 640px; margin: 2.5rem auto 0; text-align: center; }
+  .ir-rollers .caution-box { max-width: 640px; margin: 1.8rem auto 0; }
+
+  /* Sourcing */
+  .ir-source { background: var(--earth); padding: 7rem 2rem; text-align: center; margin-top: 5rem; }
+  .ir-source-inner { max-width: 640px; margin: 0 auto; }
+  .ir-source .ir-eyebrow { color: var(--terracotta); }
+  .ir-source h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 500; color: #FAF6F1; line-height: 1.15; margin-bottom: 2rem; }
+  .ir-source-body { font-size: 1rem; color: #FAF6F1; line-height: 2; margin-bottom: 2.5rem; }
+  .ir-rule { width: 40px; height: 1px; background: var(--terracotta); margin: 0 auto 2.5rem; }
+  .ir-source-close { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 2.6vw, 1.7rem); color: var(--terracotta); line-height: 1.5; }
+
+  @media (max-width: 760px) {
+    .ir-section { padding-top: 3.5rem; }
+    .ir-grid, .ir-blends { grid-template-columns: 1fr; gap: 2.8rem; }
+    .ir-formula { grid-template-columns: 1fr; gap: 1rem; }
+    .ir-row { grid-template-columns: 1fr; gap: 0.3rem; }
+    .ir-row.ir-head { display: none; }
+    .ir-source { padding: 4.5rem 1.4rem; }
+  }
+  @media (max-width: 480px) {
+    .ir-wrap { padding: 0 1.2rem; }
+    .ir-name { font-size: 1.75rem; }
+  }
 </style>
 
 <!-- Start of HubSpot Embed Code -->
@@ -187,369 +268,159 @@
 
 <div class="ingr-banner">
   <img src="assets/Ritual-Banner.jpg" alt="Whipped body butter with a heart traced into its surface" loading="lazy">
-  <div class="ingr-banner-caption">"Self care isn't a luxury.<br>It's non-negotiable."</div>
+  <div class="ingr-banner-caption ir-caption">Every ingredient has a purpose.</div>
 </div>
 
 <div class="page-header">
   <div style="text-align:center; margin-bottom:1.5rem;"><a href="index.html" class="back-link">← Back to Atabey Botanica</a></div>
   <img src="assets/Logo.png" alt="Atabey Botanica" style="width:140px; height:auto; display:block; margin:0 auto 1.2rem;">
-  
   <h1 class="page-title">Ingredient <em>Reference</em></h1>
-  <p class="page-sub" style="color:#FAF6F1;">What is in every formula, and why it is there. Nothing hidden. Everything disclosed.</p>
+  <div class="ir-kicker">What's in it. Why it's here.</div>
+  <p class="ir-intro">Every ingredient is chosen with purpose, from the plant butters that form our foundation to the botanicals that distinguish each formula. Nothing unnecessary. Nothing hidden.</p>
+</div>
+
+<main>
+
+  <!-- ══ 1 · THE FOUNDATION ══ -->
+  <section class="ir-section">
+    <div class="ir-wrap">
+      <div class="ir-eyebrow">The Foundation</div>
+      <h2 class="ir-h2">What every butter begins with</h2>
+      <div class="ir-table">
+        <div class="ir-row ir-head"><div>Ingredient</div><div>What it brings</div></div>
+        <div class="ir-row"><div class="ir-ing">Unrefined Shea Butter</div><div class="ir-what">Rich plant butter that deeply moisturizes and softens dry skin.</div></div>
+        <div class="ir-row"><div class="ir-ing">Unrefined Cocoa Butter</div><div class="ir-what">A rich emollient that helps soften rough, dry skin and gives our butters their signature body.</div></div>
+        <div class="ir-row"><div class="ir-ing">Fractionated Coconut Oil</div><div class="ir-what">Lightweight plant oil that helps the formula glide easily and absorb without a heavy finish.</div></div>
+        <div class="ir-row"><div class="ir-ing">Jojoba Oil</div><div class="ir-what">Lightweight conditioning oil valued for its compatibility with the skin's natural oils.</div></div>
+        <div class="ir-row"><div class="ir-ing">Vitamin E</div><div class="ir-what">Plant-derived antioxidant that helps protect the formula while conditioning the skin.</div></div>
+      </div>
+      <p class="ir-note">These ingredients form the foundation of our body butters. Each expression is then shaped by the botanical chosen for its distinct skin qualities.</p>
     </div>
-  </div>
+  </section>
 
-<div class="page-body">
+  <!-- ══ 2 · THE BOTANICALS ══ -->
+  <section class="ir-section">
+    <div class="ir-wrap">
+      <div class="ir-eyebrow">The Botanicals</div>
+      <h2 class="ir-h2">What each one brings</h2>
 
-  <!-- THE BASE -->
-  <div class="base-section">
-    <div class="section-label">Foundation of every butter</div>
-    <h2 class="section-title">The <em>shared base</em></h2>
+      <div class="ir-grid">
+        <article class="ir-item" id="calendula">
+          <h3 class="ir-name">Calendula</h3>
+          <div class="ir-desc">Gentle · Fragrance-Free</div>
+          <div class="ir-ing-name">Calendula Flower Extract</div>
+          <p class="ir-copy">Traditionally valued in skin care for its gentle conditioning qualities. Our fragrance-free expression is created for skin asking for simple, gentle care.</p>
+          <div class="ir-list"><div class="ir-list-label">Full ingredient list</div><div class="ir-list-text">Unrefined Shea Butter, Jojoba Oil, Castor Oil, Unrefined Cocoa Butter, Fractionated Coconut Oil, Vitamin E, Calendula Flower Extract</div></div>
+        </article>
 
-    <div class="ing-grid">
-      <div class="ing-row header-row">
-        <div class="ing-cell">Ingredient</div>
-        <div class="ing-cell">What it brings to your skin</div>
-      </div>
-      <div class="ing-row">
-        <div class="ing-cell ing-name-cell"><div class="name">Unrefined Shea Butter</div></div>
-        <div class="ing-cell ing-role-cell">
-          <div class="role">The heart of the formula, a rich, deeply nourishing butter traditionally used on very dry skin.</div>
-          
-        </div>
-      </div>
-      <div class="ing-row">
-        <div class="ing-cell ing-name-cell"><div class="name">Unrefined Cocoa Butter</div></div>
-        <div class="ing-cell ing-role-cell">
-          <div class="role">Naturally rich with a warm, chocolate aroma. Gives the butter its structure and a long, slow release of moisture.</div>
+        <article class="ir-item" id="frankincense">
+          <h3 class="ir-name">Frankincense</h3>
+          <div class="ir-desc">Refining · Warm · Resinous</div>
+          <div class="ir-ing-name">Frankincense Essential Oil</div>
+          <p class="ir-copy">An ancient botanical resin traditionally valued in skin care for its toning qualities and association with a more refined-looking complexion.</p>
+          <div class="ir-list"><div class="ir-list-label">Full ingredient list</div><div class="ir-list-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Vitamin E, Frankincense Essential Oil</div></div>
+        </article>
 
-        </div>
-      </div>
-      <div class="ing-row">
-        <div class="ing-cell ing-name-cell"><div class="name">Fractionated Coconut Oil</div></div>
-        <div class="ing-cell ing-role-cell">
-          <div class="role">The lightweight carrier that makes the butter absorb cleanly without greasiness.</div>
-          
-        </div>
-      </div>
-      <div class="ing-row">
-        <div class="ing-cell ing-name-cell"><div class="name">Jojoba Oil</div></div>
-        <div class="ing-cell ing-role-cell">
-          <div class="role">The closest plant oil to the skin's own natural sebum.</div>
-          
-        </div>
-      </div>
-      <div class="ing-row">
-        <div class="ing-cell ing-name-cell"><div class="name">Vitamin E</div></div>
-        <div class="ing-cell ing-role-cell">
-          <div class="role">A plant-derived antioxidant that protects the formula and supports the look of healthy skin.</div>
-          
-        </div>
-      </div>
-    </div>
+        <article class="ir-item" id="geranium">
+          <h3 class="ir-name">Geranium</h3>
+          <div class="ir-desc">Balancing · Softly Floral</div>
+          <div class="ir-ing-name">Geranium Essential Oil</div>
+          <p class="ir-copy">Traditionally valued in skin care for supporting the appearance of an even, balanced complexion.</p>
+          <div class="ir-list"><div class="ir-list-label">Full ingredient list</div><div class="ir-list-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Vitamin E, Geranium Essential Oil</div></div>
+        </article>
 
-    <p style="font-size:0.8rem; color:var(--muted); font-style:italic; line-height:1.7;">
-      This base is shared across most of our body butters, with Calendula built on a lightly modified version to carry its hand-infused botanical. What makes each expression distinct is the botanical added at the finish.
-    </p>
-  </div>
+        <article class="ir-item" id="bergamot">
+          <h3 class="ir-name">Bergamot</h3>
+          <div class="ir-desc">Fresh · Lightweight · Citrus</div>
+          <div class="ir-ing-name">Bergamot Essential Oil</div>
+          <p class="ir-copy">Traditionally used in skin care for oily and combination skin. A fresh botanical expression chosen for skin that prefers a lighter feel.</p>
+          <div class="ir-list"><div class="ir-list-label">Full ingredient list</div><div class="ir-list-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Vitamin E, Bergamot Essential Oil</div></div>
+        </article>
+      </div>
 
-  <hr class="section-divider">
+      <!-- Formulas -->
+      <div class="ir-formulas">
+        <h2 class="ir-h2">Beyond the butters</h2>
+        <p class="ir-subhead">Plant-based formulas, each made for a purpose.</p>
 
-  <!-- SCENT SECTION INTRO -->
-  <div class="section-label">The collection</div>
-  <h2 class="section-title" style="margin-bottom:0.5rem;">Calendula <em>Body Butter</em></h2>
+        <article class="ir-formula" id="sugar-scrub">
+          <div>
+            <h3 class="ir-name">Sugar Scrub</h3>
+            <div class="ir-desc">Exfoliating · Polishing · Conditioning</div>
+          </div>
+          <div>
+            <p class="ir-copy">Fine cane sugar lifts away dry surface buildup while plant oils and butters leave skin conditioned and smooth.</p>
+            <div class="ir-list"><div class="ir-list-label">Full ingredient list</div><div class="ir-list-text">Cane Sugar, Castor Oil, Unrefined Shea Butter, Fractionated Coconut Oil, Jojoba Oil, Frankincense or Geranium Essential Oil, Unrefined Cocoa Butter, Vitamin E</div></div>
+          </div>
+        </article>
 
+        <article class="ir-formula" id="beard-butter">
+          <div>
+            <h3 class="ir-name">Whipped Beard &amp; Hair Butter</h3>
+            <div class="ir-desc">Conditioning · Pliable · Wax-Free</div>
+          </div>
+          <div>
+            <p class="ir-copy">Calendula-infused Moroccan argan oil conditions coarse beard and hair while plant butters and oils add softness and manageability without wax.</p>
+            <div class="ir-list"><div class="ir-list-label">Full ingredient list</div><div class="ir-list-text">Unrefined Shea Butter, Calendula-Infused Argan Oil, Jojoba Oil, Unrefined Cocoa Butter, Fractionated Coconut Oil, Vitamin E, Rosemary Essential Oil</div></div>
+          </div>
+        </article>
 
-  <!-- CALENDULA -->
-  <div class="scent-section" id="calendula" style="scroll-margin-top:90px;">
-    <div class="scent-header">
-      <div class="scent-name">Calendula</div>
-      <div class="scent-desc">Gentle · Comforting · Restorative</div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>Calendula Flower Extract</strong>
-          A golden traditional flower, hand-infused with no added fragrance, carrying only its own natural aroma. Valued as a gentle skin conditioner rich in antioxidant-supporting flavonoids, cherished across generations.
-        </div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title" style="text-transform:none; letter-spacing:0;">How it's made</div>
-        <div class="label-line-text" style="font-style:normal;">Hand-infused in small batches: dried calendula blossoms steeped slowly in castor oil before being whipped into the base.</div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title">Full ingredient list as it appears on the label</div>
-        <div class="label-line-text">Unrefined Shea Butter, Jojoba Oil, Castor Oil, Unrefined Cocoa Butter, Fractionated Coconut Oil, Vitamin E, Calendula Flower Extract</div>
-      </div>
-    </div>
-  </div>
+        <article class="ir-formula" id="butter-stick">
+          <div>
+            <h3 class="ir-name">Butter Stick</h3>
+            <div class="ir-desc">Targeted · Portable · Beeswax-Free</div>
+          </div>
+          <div>
+            <p class="ir-copy">Plant butters, calendula-infused jojoba and plant-derived candelilla wax create concentrated moisture that glides directly where skin needs it.</p>
+            <div class="ir-list"><div class="ir-list-label">Full ingredient list</div><div class="ir-list-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Calendula-Infused Jojoba Oil, Fractionated Coconut Oil, Candelilla Wax, Vitamin E, Frankincense Essential Oil</div></div>
+          </div>
+        </article>
 
-  <h2 class="section-title" style="margin:2.5rem 0 0.5rem;">Botanical <em>Whipped Body Butter</em></h2>
-
-  <!-- FRANKINCENSE -->
-  <div class="scent-section">
-    <div class="scent-header">
-      <div class="scent-name">Frankincense</div>
-      <div class="scent-desc">Grounding · Sacred · Restorative</div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>Frankincense Essential Oil</strong>
-          One of the most ancient plant resins on earth, traditionally used for its toning, tightening effect on skin. It has long been burned as incense in ceremony and prayer.
-        </div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title">Full ingredient list as it appears on the label</div>
-        <div class="label-line-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Vitamin E, Frankincense Essential Oil</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- GERANIUM -->
-  <div class="scent-section">
-    <div class="scent-header">
-      <div class="scent-name">Geranium</div>
-      <div class="scent-desc">Blooming · Balancing · Heart Opening</div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>Geranium Essential Oil</strong>
-          A restorative floral oil, traditionally valued for supporting the look of even, balanced tone. Its aroma remains a staple of aromatherapy traditions.
-        </div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title">Full ingredient list as it appears on the label</div>
-        <div class="label-line-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Vitamin E, Geranium Essential Oil</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BERGAMOT -->
-  <div class="scent-section">
-    <div class="scent-header">
-      <div class="scent-name">Bergamot</div>
-      <div class="scent-desc">Citrus · Uplifting · Liberating</div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>Bergamot Essential Oil</strong>
-          A sun-ripened citrus oil, light and fast-absorbing, traditionally used in skin care for oily and combination skin. Its aroma is bright, fresh and unmistakably uplifting.
-        </div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title">Full ingredient list as it appears on the label</div>
-        <div class="label-line-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Fractionated Coconut Oil, Jojoba Oil, Vitamin E, Bergamot Essential Oil</div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="section-divider">
-
-  <!-- ══ SUGAR SCRUB ══ -->
-  <h2 class="section-title" style="margin-bottom:0.5rem;">Sugar <em>Scrub</em></h2>
-
-  <div class="scent-section" id="sugar-scrub" style="scroll-margin-top:90px;">
-    <div class="scent-header">
-      <div class="scent-name">Cane Sugar</div>
-      <div class="scent-desc">Exfoliating · Polishing · Conditioning</div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>Fine Cane Sugar</strong>
-          Lifts away dry surface buildup, then dissolves as you work it in.
-        </div>
-      </div>
-      <div class="single-eo-note" style="margin-top:0.75rem;">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>Castor Oil</strong>
-          Gives the scrub its rich, pourable body and keeps the sugar suspended, so every scoop is evenly blended.
-        </div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title" style="text-transform:none; letter-spacing:0;">How it's made</div>
-        <div class="label-line-text" style="font-style:normal;">Our whipped butter base is folded with castor oil and cane sugar, then finished with Frankincense or Geranium essential oil.</div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title">Full ingredient list as it appears on the label</div>
-        <div class="label-line-text">Cane Sugar, Castor Oil, Unrefined Shea Butter, Fractionated Coconut Oil, Jojoba Oil, Frankincense or Geranium Essential Oil, Unrefined Cocoa Butter, Vitamin E</div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="section-divider">
-
-  <!-- ══ BEARD & HAIR BUTTER ══ -->
-  <h2 class="section-title" style="margin-bottom:0.5rem;">Whipped Beard &amp; <em>Hair Butter</em></h2>
-
-  <div class="scent-section" id="beard-butter" style="scroll-margin-top:90px;">
-    <div class="scent-header">
-      <div class="scent-name">Calendula-Infused Argan</div>
-      <div class="scent-desc">Conditioning · Pliable · Wax-free</div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>Moroccan Argan Oil, Infused with Calendula</strong>
-          Argan has long been used across North Africa to condition hair and the skin beneath it. We infuse it with calendula by hand before it goes into the blend.
-        </div>
-      </div>
-      <div class="single-eo-note" style="margin-top:0.75rem;">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>Rosemary Essential Oil</strong>
-          A traditional hair-care botanical, and the blend's only aroma. Herbal and clean.
-        </div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title" style="text-transform:none; letter-spacing:0;">How it's made</div>
-        <div class="label-line-text" style="font-style:normal;">Dried calendula blossoms are steeped slowly in argan oil, strained, then whipped into shea and cocoa butter with no wax, so it stays pliable rather than stiff.</div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title">Full ingredient list as it appears on the label</div>
-        <div class="label-line-text">Unrefined Shea Butter, Calendula-Infused Argan Oil, Jojoba Oil, Unrefined Cocoa Butter, Fractionated Coconut Oil, Vitamin E, Rosemary Essential Oil</div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="section-divider">
-
-  <!-- ══ BUTTER STICK ══ -->
-  <h2 class="section-title" style="margin-bottom:0.5rem;">Butter <em>Stick</em></h2>
-
-  <div class="scent-section" id="butter-stick" style="scroll-margin-top:90px;">
-    <div class="scent-header">
-      <div class="scent-name">Candelilla Wax</div>
-      <div class="scent-desc">Targeted · Portable · Beeswax-free</div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>Candelilla Wax</strong>
-          A plant wax from a desert shrub native to northern Mexico, used in place of beeswax. It sets the stick firm enough to carry, so the butters can glide on where you need them.
-        </div>
-      </div>
-      <div class="single-eo-note" style="margin-top:0.75rem;">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>Calendula-Infused Jojoba Oil</strong>
-          Hand-infused with calendula for slip, with a light finish of frankincense.
-        </div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title">Full ingredient list as it appears on the label</div>
-        <div class="label-line-text">Unrefined Shea Butter, Unrefined Cocoa Butter, Calendula-Infused Jojoba Oil, Fractionated Coconut Oil, Candelilla Wax, Vitamin E, Frankincense Essential Oil</div>
-      </div>
-    </div>
-  </div>
-
-  <hr class="section-divider">
-
-  <!-- ══ ESSENTIAL OIL ROLLER ══ -->
-  <h2 class="section-title" style="margin-bottom:0.5rem;">Essential Oil <em>Roller</em></h2>
-  <p style="font-size:0.85rem; color:var(--muted); line-height:1.8; margin-bottom:1.5rem;">
-    Each 10 ml roller holds a blend of essential oils in fractionated coconut oil, a light carrier that absorbs without a greasy finish.
-  </p>
-
-  <div class="scent-section" id="rollers" style="scroll-margin-top:90px;">
-    <div class="scent-header">
-      <div class="scent-name">Grounding</div>
-      <div class="scent-desc">Earthy · Herbal</div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>&ldquo;I deserve to slow down.&rdquo;</strong>
-          An earthy, grounding aroma for moments when you want to pause, exhale and reconnect with the present.
-        </div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title">Essential oils in this blend</div>
-        <div class="label-line-text">Roman Chamomile, a forest-inspired woodland blend, Clary Sage, Spanish Sage</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="scent-section">
-    <div class="scent-header">
-      <div class="scent-name">Motivating</div>
-      <div class="scent-desc">Cool · Bright</div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>&ldquo;I welcome joy into this moment.&rdquo;</strong>
-          A cool, bright aroma with an invigorating character, paired with an intention of joy and possibility.
-        </div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title">Essential oils in this blend</div>
-        <div class="label-line-text">Peppermint, Spearmint, Lemongrass, Lemon, Lime</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="scent-section">
-    <div class="scent-header">
-      <div class="scent-name">Serenity</div>
-      <div class="scent-desc">Soft · Floral · Woody</div>
-    </div>
-    <div class="scent-body">
-      <div class="single-eo-note">
-        <div class="single-eo-icon">✦</div>
-        <div class="single-eo-text">
-          <strong>&ldquo;I connect to the stillness within me.&rdquo;</strong>
-          A soft, calming aroma for quieter moments, paired with an invitation to pause and find stillness.
-        </div>
-      </div>
-      <div class="label-line">
-        <div class="label-line-title">Key essential oils in this blend</div>
-        <div class="label-line-text">Lavender, Cedarwood, Ylang Ylang, Marjoram, Roman Chamomile, Vetiver, Sandalwood, with a hint of Vanilla</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="label-line" style="border-top:none; margin-top:0; padding-top:0;">
-    <div class="label-line-title">Ingredient list as it appears on the label</div>
-    <div class="label-line-text">Fractionated Coconut Oil, Essential Oil Blend</div>
-  </div>
-
-  <div class="caution-box">
+        <div class="ir-rollers" id="rollers">
+          <h3 class="ir-name" style="text-align:center; font-size:1.55rem;">Essential Oil Rollers</h3>
+          <p class="ir-rollers-intro">Three essential oil blends in lightweight fractionated coconut oil, each paired with an intention.</p>
+          <div class="ir-blends">
+            <article>
+              <h4 class="ir-name">Grounding</h4>
+              <div class="ir-desc">Earthy · Herbal</div>
+              <div class="ir-list"><div class="ir-list-label">Essential oils</div><div class="ir-list-text">Roman Chamomile · Woodland Blend · Clary Sage · Spanish Sage</div></div>
+            </article>
+            <article>
+              <h4 class="ir-name">Motivating</h4>
+              <div class="ir-desc">Cool · Bright</div>
+              <div class="ir-list"><div class="ir-list-label">Essential oils</div><div class="ir-list-text">Peppermint · Spearmint · Lemongrass · Lemon · Lime</div></div>
+            </article>
+            <article>
+              <h4 class="ir-name">Serenity</h4>
+              <div class="ir-desc">Soft · Floral · Woody</div>
+              <div class="ir-list"><div class="ir-list-label">Key essential oils</div><div class="ir-list-text">Lavender · Cedarwood · Ylang Ylang · Marjoram · Roman Chamomile · Vetiver · Sandalwood · Vanilla</div></div>
+            </article>
+          </div>
+          <div class="ir-label-line">
+            <div class="ir-list-label">Ingredient list as it appears on the label</div>
+            <div class="ir-list-text">Fractionated Coconut Oil, Grounding, Motivating or Serenity Essential Oil Blend</div>
+          </div>
+          <div class="caution-box">
     <strong>Before you roll</strong>
     For external use only. Patch test on a small area first, and keep away from eyes and the face. Keep out of reach of children. If you are pregnant, nursing or under a doctor's care, consult your physician before use. Motivating contains citrus oils, so avoid strong sun on the applied area for several hours.
   </div>
-
-</div>
-
-<!-- SOURCING -->
-<div style="background: var(--earth); padding: 4rem 2rem;">
-  <div style="max-width:860px; margin:0 auto; display:block; max-width:620px;">
-    <div>
-      <div style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--border); margin-bottom:0.8rem;">Sourcing & Integrity</div>
-      <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:600; color:var(--sand); margin-bottom:1rem; line-height:1.2;">Where it comes from matters</h2>
-      <p style="font-size:0.88rem; color:var(--border); line-height:1.9; margin-bottom:1rem;">
-        Shea and cocoa butter sourced from women's fair trade cooperatives. Essential oils traced to their origin. Every supplier held to the same standard we hold ourselves: transparency, integrity, and care for the people who grow these plants.
-      </p>
-      <p style="font-size:0.8rem; color:#FAF6F1; line-height:1.8; font-style:italic;">
-        When you buy Atabey Botanica, you support the hands that tended the earth first.
-      </p>
+        </div>
+      </div>
     </div>
-    </div>
+  </section>
+
+</main>
+
+<!-- ══ 3 · SOURCING ══ -->
+<section class="ir-source">
+  <div class="ir-source-inner">
+    <div class="ir-eyebrow">Sourcing &amp; Integrity</div>
+    <h2>Where it comes from matters.</h2>
+    <div class="ir-rule"></div>
+    <p class="ir-source-body">Our shea and cocoa butters are sourced through women's fair-trade cooperatives. Our essential oils are selected with attention to origin and traceability. Because what we put on our skin matters, and so does how it reaches us.</p>
   </div>
-</div>
+</section>
+
 
 <!-- ORDER STRIP -->
 <div style="background: var(--terracotta); padding: 2rem; text-align: center;">
