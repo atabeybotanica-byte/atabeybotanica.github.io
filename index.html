@@ -625,6 +625,183 @@
 
   .order-cta { margin-top: 1rem; }
 
+  /* ── PRODUCT CARDS (collection, Sep 2026) ── */
+  .products .section-inner { max-width: 1100px; }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0 1rem;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 1.5rem 1.5rem 1.75rem;
+    text-align: center;
+  }
+
+  .product-img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: var(--light-sand);
+    display: block;
+    margin-bottom: 1.2rem;
+  }
+
+  .product-tag {
+    align-self: center;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    border: 1px solid var(--terracotta);
+    padding: 0.15rem 0.75rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--earth);
+    line-height: 1.25;
+    margin-bottom: 0.8rem;
+  }
+
+  .product-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1.4rem;
+  }
+
+  .size-list {
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+  }
+
+  .size-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0.4rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--earth);
+    text-decoration: none;
+    text-align: left;
+  }
+
+  a.size-row { transition: background 0.2s ease; }
+  a.size-row:hover { background: var(--light-sand); }
+  a.size-row:hover .size-price { color: var(--terracotta); }
+  a.size-row:focus-visible { outline: 2px solid var(--terracotta); outline-offset: -2px; }
+
+  .size-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .size-name small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.15rem;
+  }
+
+  .size-name small.affirm {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .size-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .size-price s {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--muted);
+    margin-right: 0.35rem;
+  }
+
+  .size-go {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--terracotta);
+    margin-left: 0.4rem;
+  }
+
+  .product-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--terracotta);
+    margin-top: 0.9rem;
+  }
+
+  .product-card .btn-primary { margin-top: 1.25rem; padding: 1rem 1.6rem; }
+
+  .product-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--terracotta);
+    line-height: 1.4;
+    margin: -0.4rem 0 0.9rem;
+  }
+
+  .product-attr {
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: -0.3rem 0 0.9rem;
+  }
+
+  .product-link {
+    align-self: center;
+    margin-top: 1.1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    text-decoration: none;
+    border-bottom: 1px solid var(--terracotta);
+    padding-bottom: 0.1rem;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .product-link:hover { color: var(--deep-terracotta); border-color: var(--deep-terracotta); }
+
+  @media (max-width: 960px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .product-card { padding: 1.4rem 1.2rem 1.6rem; }
+  }
+
   /* ── ORDER SECTION ── */
   .order-section { background: white; }
   .order-section .section-inner { max-width: 720px; }
@@ -1027,56 +1204,155 @@
 <section class="products" id="collection">
   <div class="section-inner reveal">
     <div class="section-label">The Collection</div>
-    <h2 class="section-title">Four expressions. <em>One intention.</em></h2>
+    <h2 class="section-title">Six rituals. <em>One intention.</em></h2>
     <p class="section-body" style="margin: 0 auto;">
-      Each butter is hand-batched in small quantities with pure botanical ingredients.
+      Plant-based body and hair care created with purpose. Each formula is hand-batched in small quantities with botanicals selected for what they bring to the skin, hair or moment.
     </p>
 
-    <div class="scent-grid" style="grid-template-columns: repeat(2, 1fr);">
-      <div class="scent-card">
-        <img src="assets/Calendula.jpg" alt="Calendula body butter" style="width:100%; max-height:220px; object-fit:contain; object-position:center; display:block; margin-bottom:1.2rem; background:var(--light-sand);">
-        <div class="scent-name">Calendula</div>
-        <p class="scent-ask">My skin is asking for gentle care.</p>
-        <div class="scent-divider"></div>
-        <p class="scent-note">
-          Our gentlest expression. No added fragrance and hand-infused with calendula, a botanical with a long history of use in skin care and modern clinical study. Created for skin that calls for simplicity, moisture and gentle care.
-        </p>
-      </div>
+    <div class="product-grid">
 
-      <div class="scent-card">
-        <img src="assets/Frankincense.jpg" alt="Frankincense body butter" style="width:100%; max-height:220px; object-fit:contain; object-position:center; display:block; margin-bottom:1.2rem; background:var(--light-sand);">
-        <div class="scent-name">Frankincense</div>
-        <p class="scent-ask">My skin is asking to feel smooth and renewed.</p>
-        <div class="scent-divider"></div>
-        <p class="scent-note">
-          An ancient botanical resin traditionally valued in skin care for its toning qualities and the appearance of smoother, more refined skin. Warm, resinous and grounding.
+      <!-- 1 · CALENDULA BODY BUTTER (own category) -->
+      <article class="product-card">
+        <img class="product-img" src="assets/Calendula.jpg" alt="Calendula Body Butter" loading="lazy" onerror="this.remove()">
+        <h3 class="product-name">Calendula Body Butter</h3>
+        <p class="product-line">My skin is asking for gentle care.</p>
+        <div class="product-attr">No added fragrance</div>
+        <p class="product-desc">
+          Our fragrance-free expression, hand-infused with calendula. Calendula has a long history of traditional use in preparations for delicate and irritated skin. Paired with rich plant butters and oils, it offers simple, lasting moisture when skin is asking for less.
         </p>
-      </div>
+        <div class="size-list">
+          <a class="size-row" href="https://buy.stripe.com/REPLACE-calendula-discovery-1oz" target="_blank" rel="noopener">
+            <span class="size-name">Discovery<small>1 oz</small></span>
+            <span class="size-price">$10<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+          <a class="size-row" href="https://buy.stripe.com/REPLACE-calendula-essential-2oz" target="_blank" rel="noopener">
+            <span class="size-name">Essential<small>2 oz</small></span>
+            <span class="size-price">$20<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+          <a class="size-row" href="https://buy.stripe.com/28E28qaoX70U9Bp4o58bS0G" target="_blank" rel="noopener">
+            <span class="size-name">Classic<small>4 oz</small></span>
+            <span class="size-price">$35<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+          <a class="size-row" href="https://buy.stripe.com/REPLACE-calendula-signature-6oz" target="_blank" rel="noopener">
+            <span class="size-name">Signature<small>6 oz</small></span>
+            <span class="size-price">$55<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+        </div>
+        <a href="ingredients.html#calendula" class="product-link">Explore Calendula</a>
+      </article>
 
-      <div class="scent-card">
-        <img src="assets/Geranium.jpg" alt="Geranium body butter" style="width:100%; max-height:220px; object-fit:contain; object-position:center; display:block; margin-bottom:1.2rem; background:var(--light-sand);">
-        <div class="scent-name">Geranium</div>
-        <p class="scent-ask">My skin is asking for balance.</p>
-        <div class="scent-divider"></div>
-        <p class="scent-note">
-          Traditionally valued in skin care for supporting the look of even, balanced skin. Softly floral scent.
+      <!-- 2 · BOTANICAL WHIPPED BODY BUTTER (sale) -->
+      <article class="product-card">
+        <img class="product-img" src="assets/Collection.jpg" alt="Botanical Whipped Body Butter in Frankincense, Geranium and Bergamot" loading="lazy" onerror="this.remove()">
+        <div class="product-tag">Last of the Season</div>
+        <h3 class="product-name">Botanical Whipped Body Butter</h3>
+        <p class="product-line">Choose the botanical your skin is asking for.</p>
+        <p class="product-desc">
+          A rich whipped base of shea and cocoa butters, finished with a botanical selected for its traditional place in skin care. Choose Frankincense, Geranium or Bergamot according to the skin experience you want.
         </p>
-      </div>
+        <div class="size-list">
+          <div class="size-row">
+            <span class="size-name">Discovery<small>1 oz</small></span>
+            <span class="size-price"><s aria-label="Regular price $10">$10</s>$5</span>
+          </div>
+          <div class="size-row">
+            <span class="size-name">Essential<small>2 oz</small></span>
+            <span class="size-price"><s aria-label="Regular price $20">$20</s>$10</span>
+          </div>
+          <div class="size-row">
+            <span class="size-name">Signature<small>6 oz</small></span>
+            <span class="size-price"><s aria-label="Regular price $55">$55</s>$30</span>
+          </div>
+        </div>
+        <p class="product-note">Hand-batched, now at a gentler price</p>
+        <div><a href="body-butters.html" class="btn-primary">Choose Your Botanical</a></div>
+      </article>
 
-      <div class="scent-card">
-        <img src="assets/Bergamot.jpg" alt="Bergamot body butter" style="width:100%; max-height:220px; object-fit:contain; object-position:center; display:block; margin-bottom:1.2rem; background:var(--light-sand);">
-        <div class="scent-name">Bergamot</div>
-        <p class="scent-ask">My skin is asking to feel fresh and light.</p>
-        <div class="scent-divider"></div>
-        <p class="scent-note">
-          Traditionally used in skin care for oily and combination skin. Bright and citrus-forward, with a lighter feel that leaves skin soft and refreshed.
+      <!-- 3 · SUGAR SCRUB (sale) -->
+      <article class="product-card">
+        <img class="product-img" src="assets/Sugar-Scrub.jpg" alt="Sugar Scrub" loading="lazy" onerror="this.remove()">
+        <div class="product-tag">Last of the Season</div>
+        <h3 class="product-name">Sugar Scrub</h3>
+        <p class="product-line">For skin that needs a fresh start.</p>
+        <p class="product-desc">
+          Fine cane sugar lifts away dry surface buildup while plant oils and butters condition as you exfoliate. Especially useful where texture tends to linger, including hands, elbows and heels.
         </p>
-      </div>
+        <div class="size-list">
+          <a class="size-row" href="https://buy.stripe.com/REPLACE-scrub-classic-4oz" target="_blank" rel="noopener">
+            <span class="size-name">Classic<small>4 oz</small></span>
+            <span class="size-price"><s aria-label="Regular price $35">$35</s>$20<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+        </div>
+        <p class="product-note">Hand-batched, now at a gentler price</p>
+      </article>
+
+      <!-- 4 · WHIPPED BEARD & HAIR BUTTER -->
+      <article class="product-card">
+        <img class="product-img" src="assets/Beard-Butter.jpg" alt="Whipped Beard and Hair Butter" loading="lazy" onerror="this.remove()">
+        <h3 class="product-name">Whipped Beard &amp; Hair Butter</h3>
+        <p class="product-line">Condition without the wax.</p>
+        <p class="product-desc">
+          A lightweight, wax-free blend created for coarse beard and hair. Shea, argan, jojoba and calendula-infused oils add pliability, tame flyaways and condition the skin beneath without the stiffness of a traditional balm.
+        </p>
+        <div class="size-list">
+          <a class="size-row" href="https://buy.stripe.com/REPLACE-beard-discovery-1oz" target="_blank" rel="noopener">
+            <span class="size-name">Discovery<small>1 oz</small></span>
+            <span class="size-price">$10<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+          <a class="size-row" href="https://buy.stripe.com/REPLACE-beard-essential-2oz" target="_blank" rel="noopener">
+            <span class="size-name">Essential<small>2 oz</small></span>
+            <span class="size-price">$20<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+          <a class="size-row" href="https://buy.stripe.com/REPLACE-beard-classic-4oz" target="_blank" rel="noopener">
+            <span class="size-name">Classic<small>4 oz</small></span>
+            <span class="size-price">$35<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+        </div>
+      </article>
+
+      <!-- 5 · BUTTER STICK -->
+      <article class="product-card">
+        <img class="product-img" src="assets/Butter-Stick.jpg" alt="Butter Stick" loading="lazy" onerror="this.remove()">
+        <h3 class="product-name">Butter Stick</h3>
+        <p class="product-line">Targeted moisture. Made to move.</p>
+        <p class="product-desc">
+          A concentrated botanical butter that glides directly onto hands, knuckles, cuticles, elbows and other dry areas. Portable, mess-free and made for precise application wherever you need it.
+        </p>
+        <div class="size-list">
+          <a class="size-row" href="https://buy.stripe.com/REPLACE-butter-stick-1oz" target="_blank" rel="noopener">
+            <span class="size-name">Butter Stick<small>1 oz</small></span>
+            <span class="size-price">$15<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+        </div>
+      </article>
+
+      <!-- 6 · ESSENTIAL OIL ROLLER -->
+      <article class="product-card">
+        <img class="product-img" src="assets/Roller.jpg" alt="Essential Oil Roller" loading="lazy" onerror="this.remove()">
+        <h3 class="product-name">Essential Oil Roller</h3>
+        <p class="product-line">Botanical aroma, paired with intention.</p>
+        <p class="product-desc">
+          Three essential oil blends, each paired with words to carry into the moment. Roll onto pulse points, inhale the aroma and return to your intention.
+        </p>
+        <div class="size-list">
+          <a class="size-row" href="https://buy.stripe.com/fZu3cueFd0CwfZN1bT8bS0F" target="_blank" rel="noopener">
+            <span class="size-name">Grounding<small class="affirm">&ldquo;I deserve to slow down.&rdquo;</small></span>
+            <span class="size-price">$10<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+          <a class="size-row" href="https://buy.stripe.com/fZu3cueFd0CwfZN1bT8bS0F" target="_blank" rel="noopener">
+            <span class="size-name">Motivating<small class="affirm">&ldquo;I welcome joy into this moment.&rdquo;</small></span>
+            <span class="size-price">$10<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+          <a class="size-row" href="https://buy.stripe.com/fZu3cueFd0CwfZN1bT8bS0F" target="_blank" rel="noopener">
+            <span class="size-name">Serenity<small class="affirm">&ldquo;I connect to the stillness within me.&rdquo;</small></span>
+            <span class="size-price">$10<span class="size-go" aria-hidden="true">›</span></span>
+          </a>
+        </div>
+        <p class="product-note">Select your blend at checkout</p>
+      </article>
+
     </div>
 
-    <div class="order-cta">
-      <a href="#order" class="btn-primary">Order Now</a>
-    </div>
   </div>
 </section>
 
@@ -1151,35 +1427,15 @@
   <div class="section-inner reveal">
     <div class="order-intro-wrap">
       <div class="order-intro-img">
-        <img src="assets/Collection.jpg" alt="Atabey Botanica whipped body butter collection: Bergamot, Frankincense, Geranium, and Calendula" loading="lazy">
+        <img src="assets/Collection.jpg" alt="Atabey Botanica Calendula Body Butter and Botanical Whipped Body Butters" loading="lazy">
       </div>
       <div class="order-intro-text">
         <div class="section-label">Come Home to Yourself</div>
         <h2 class="section-title">Order Your <em>Ritual</em></h2>
       </div>
     </div>
-    <div class="bundle-list">
-
-      <a class="bundle-row" href="https://buy.stripe.com/9B66oG8gP3OIdRFdYF8bS07" target="_blank">
-        <div class="bundle-left">
-          <div class="bundle-size">Full Size Jar (6oz)</div>
-        </div>
-        <div class="bundle-right">
-          <div class="bundle-price">$55 + tax & shipping</div>
-          <span class="bundle-btn">Order →</span>
-        </div>
-      </a>
-
-      <a class="bundle-row" href="https://buy.stripe.com/5kQ28q7cL3OI14TdYF8bS08" target="_blank">
-        <div class="bundle-left">
-          <div class="bundle-size">Travel Size Jar (2oz)</div>
-        </div>
-        <div class="bundle-right">
-          <div class="bundle-price">$20 + tax & shipping</div>
-          <span class="bundle-btn">Order →</span>
-        </div>
-      </a>
-
+    <div class="order-cta" style="text-align:center; margin-bottom:2.5rem;">
+      <a href="#collection" class="btn-primary">Shop the Collection</a>
     </div>
 
     <div class="how-box">
@@ -1187,11 +1443,11 @@
       <div class="how-steps">
         <div class="how-step">
           <div class="step-num">1</div>
-          <div class="step-text"><strong>Choose your size</strong> above and tap Order →</div>
+          <div class="step-text"><strong>Choose your product and size</strong> in the Collection and tap it to open checkout.</div>
         </div>
         <div class="how-step">
           <div class="step-num">2</div>
-          <div class="step-text">On the checkout page, you will see a field: <strong>"Which scent would you like?"</strong> Type your selection there. Example: <em>Frankincense</em> or <em>Bergamot</em></div>
+          <div class="step-text"><strong>Choose your botanical</strong> from the drop-down menu at checkout, where a product offers more than one.</div>
         </div>
         <div class="how-step">
           <div class="step-num">3</div>
