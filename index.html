@@ -654,6 +654,23 @@
     margin-bottom: 1.2rem;
   }
 
+  /* Neutral placeholder for products awaiting photography (same footprint as .product-img) */
+  .product-img-placeholder {
+    width: 100%;
+    height: 200px;
+    background: var(--light-sand);
+    border: 1px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
   .product-tag {
     align-self: center;
     font-size: 0.85rem;
@@ -1303,20 +1320,30 @@
         </div>
       </article>
 
-      <!-- 5 · BUTTER STICK -->
+      <!-- 5 · BOTANICAL DEODORANT -->
       <article class="product-card">
-        <img class="product-img" src="assets/Butter-Stick.jpg" alt="Butter Stick" loading="lazy" onerror="this.remove()">
-        <h3 class="product-name">Butter Stick</h3>
-        <p class="product-line">Targeted moisture. Made to move.</p>
+        <!-- PHOTOGRAPH PENDING: replace this placeholder div with
+             <img class="product-img" src="assets/Deodorant.jpg" alt="Botanical Deodorant" loading="lazy" onerror="this.remove()"> -->
+        <div class="product-img-placeholder" role="img" aria-label="Botanical Deodorant photograph coming soon">Photograph Coming Soon</div>
+        <h3 class="product-name">Botanical Deodorant</h3>
+        <p class="product-line">Freshness without compromise.</p>
         <p class="product-desc">
-          A concentrated botanical butter that glides directly onto hands, knuckles, cuticles, elbows and other dry areas. Portable, mess-free and made for precise application wherever you need it.
+          A gentle, magnesium-based deodorant that helps neutralize odor while botanical powders absorb moisture. Sage-infused jojoba and shea condition delicate underarm skin, finished with the warm, herbaceous aroma of clary sage and cedarwood.
         </p>
         <div class="size-list">
-          <a class="size-row" href="https://buy.stripe.com/REPLACE-butter-stick-1oz" target="_blank" rel="noopener">
-            <span class="size-name">Butter Stick<small>1 oz</small></span>
-            <span class="size-price">$15<span class="size-go" aria-hidden="true">›</span></span>
-          </a>
+          <!-- STRIPE CHECKOUT PLACEHOLDER (Botanical Deodorant, 1 oz, $15): NEW CHECKOUT URL NEEDED.
+               This row is intentionally NOT a link until the Stripe payment link exists. To go live, replace the
+               <div class="size-row"> ... </div> below with:
+               <a class="size-row" href="PASTE-NEW-STRIPE-URL-HERE" target="_blank" rel="noopener">
+                 <span class="size-name">Botanical Deodorant<small>1 oz</small></span>
+                 <span class="size-price">$15<span class="size-go" aria-hidden="true">›</span></span>
+               </a> -->
+          <div class="size-row">
+            <span class="size-name">Botanical Deodorant<small>1 oz</small></span>
+            <span class="size-price">$15</span>
+          </div>
         </div>
+        <a href="ingredients.html#deodorant" class="product-link">Explore Ingredients</a>
       </article>
 
       <!-- 6 · ESSENTIAL OIL ROLLER -->
